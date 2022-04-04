@@ -1,6 +1,6 @@
 //var autos = require('../db/autos'); aca requerimos los productos que vamos hacer
 var zapatilla = require("../data/db");
-
+var products = require("../routes/products")
 const controller = {
 search: function(req, res, ) {
         //buscar el producto
