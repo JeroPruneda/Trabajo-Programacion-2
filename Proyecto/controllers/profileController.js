@@ -1,5 +1,5 @@
 //var autos = require('../db/autos'); aca requerimos los productos que vamos hacer
-var zapatilla = require("../data/db");
+var data = require("../data/db");
 
 const controller = {
     index: function(req, res) {
