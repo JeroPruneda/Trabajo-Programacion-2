@@ -2,11 +2,11 @@
 var data = require("../data/db");
 
 const controller = {
-    profile: function(req, res) {
-        res.render('index');
+    me: function(req, res) {
+        res.render('profile');
     },
     edit: function(req, res) {
-        res.render('index');
+        res.render('profile-edit');
     }
 }
 
