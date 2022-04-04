@@ -4,18 +4,12 @@ var products = require("../routes/products")
 const controller = {
 search: function(req, res, ) {
        res.render('products');
-  },
-show : function(req, res, next) {
-       //const result = (producto.getCarsByModel(req.params.model, req.params.anio)); (mostrariamos los productos)
-       if (result.length == 0) {
-        //res.send('No hay este modelo de producto ' + req.params.model); (sin no hay de ese producto)
-         
-        }
-        res.send(result);
        },
-add: function(req, res){
-           //para agregar el producto
-       }
-
+add: function(req, res, ) {
+       res.render('products-add');
+       },
+show : function(req, res, next) {
+      res.render('search-results');
+       },
 }
 module.exports = controller;

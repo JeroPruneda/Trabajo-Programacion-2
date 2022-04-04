@@ -2,7 +2,7 @@
 <html lang="es">
 <!-- Include Head -->
 
-<%-include("./partials/header.ejs")%>
+<head><%-include("./partials/header.ejs")%></head>
 
 <body>
 	<!-- Header -->
@@ -73,19 +73,17 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12">
-				<%=  %> 
+			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario para agregar prodcutos al catálogo. <br>
+			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos. <br>
+			Eliminen estás líneas y coloquen el formulario. <br>
+			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
+			////////////////
 			</h2>
-			<ul>
-				<li> <b>Marca</b> <a href="/productos/marca <%= productos.marca  %> "></a> </li>
-				<li> <b>Nombre del Producto</b> <%= productos.modelo  %> ></a> </li>
-				<li> <b>Descripcion</b>  <%= productos.anio  %> </li>
-				<li> <b>Fecha de Carga</b>  <%= productos.color  %> </a> </li>
-			</ul>
-			<img src="<%=  %> " alt="">
 
 
 	<!-- footer -->
-    <%-include("./partials/footer.ejs")%>
+	<%-include("./partials/footer.ejs")%>
 	<!-- /footer -->
 </body>
+
+</html>

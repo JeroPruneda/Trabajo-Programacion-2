@@ -5,8 +5,8 @@ const controller = {
     profile: function(req, res) {
         res.render('profile');
     },
-    login: function(req, res) {
-        res.render('login');
+    edit: function(req, res) {
+        res.render('profile-edit');
     },
     register: function(req, res) {
         res.render('index');
