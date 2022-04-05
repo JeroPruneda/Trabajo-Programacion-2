@@ -2,7 +2,7 @@
 <html lang="es">
 <!-- Include Head -->
 
-<head><%-include("./partials/header.ejs")%></head>
+<%-include("./partials/header.ejs")%>
 
 <body>
 	<!-- Header -->
@@ -73,20 +73,18 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-		<h2 class="col-12"> 
-			<img src="<%= productos.imagen  %> " alt="">
+			<h2 class="col-12">
+				<%=  %> 
+			</h2>
 			<ul>
 				<li> <b>Nombre del Producto</b> <%= productos.modelo  %> ></a> </li>
-				<li> <b>Descripcion</b>  <%= productos.descripcion  %> </li>
-				<li> <b>Fecha de Carga</b>  <%= productos.fechaDeCarga  %> </a> </li>
+				<li> <b>Descripcion</b>  <%= productos.anio  %> </li>
+				<li> <b>Fecha de Carga</b>  <%= productos.color  %> </a> </li>
 			</ul>
-			
-		</h2>
+			<img src="<%=  %> " alt="">
 
 
 	<!-- footer -->
-	<%-include("./partials/footer.ejs")%>
+    <%-include("./partials/footer.ejs")%>
 	<!-- /footer -->
 </body>
-
-</html>
