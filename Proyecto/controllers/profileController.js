@@ -8,9 +8,10 @@ const controller = {
     edit: function(req, res) {
         res.render('profile-edit');
     },
-    register: function(req, res) {
-        res.render('index');
-    }
+
+    // register: function(req, res) {
+    //     res.render('index');
+    // }
 }
 
 module.exports = controller;

@@ -1,4 +1,3 @@
-
 var data = require("../data/db");
 
 const controller = {
@@ -8,9 +7,9 @@ const controller = {
     login: function(req, res) {
         res.render('login');
     },
-    register: function(req, res) {
-        res.render('index');
-    }
+    // register: function(req, res) {
+    //     res.render('index');
+    // }
 }
 
 module.exports = controller;

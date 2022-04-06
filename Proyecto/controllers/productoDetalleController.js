@@ -4,7 +4,8 @@ var products = require("../routes/products")
 
 const controller = {
 search: function(req, res, ) {
-       res.render('products');
+       res.render('productoDetalle');
+       
        },
 add: function(req, res, ) {
        res.render('products-add');
