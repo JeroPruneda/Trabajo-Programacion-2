@@ -11,7 +11,7 @@ add: function(req, res, ) {
        res.render('products-add');
        },
 show : function(req, res, next) {
-      res.render('search-results');
+      res.render('products-add');
        },
 }
 module.exports = controller;

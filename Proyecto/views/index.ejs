@@ -5,9 +5,9 @@
 <body>
 	<%-include("./partials/header.ejs")%>
 	<!-- Banner -->
-	<div class="banner">
+	<!-- <div class="banner">
 		<img src="images/img-home-banner.jpg" alt="Banner de ofertas">
-	</div>
+	</div> -->
 	<!-- /Banner -->
 
 	<!-- Novedades -->
@@ -20,6 +20,7 @@
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
 					<a href="/productoDetalle">
+						
 						<figure class="product-box_image">
 							<img src=<%= data.productos[1].imagen%> alt="cafetera moulinex">
 						</figure>
@@ -27,6 +28,8 @@
 							<h2><%= data.productos[1].marca %></h2>
 							<p><%= data.productos[1].descripcion %></p>
 							<p>Comentarios: 12</p>
+
+						
 						</article>
 					</a>
 				</section>
@@ -142,6 +145,7 @@
 		</div>
 	</div>
 	<!-- /Más comentados -->
+			
 	<%-include("./partials/footer.ejs")%>
 </body>	
 
