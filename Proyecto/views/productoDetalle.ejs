@@ -6,7 +6,7 @@
 	<%-include("./partials/header.ejs")%>
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title">Nombre del producto</h2> 
+			<h2 class="products-title"><%=data.productos.modelo%></h2> 
 			<p class="product-detail-description">
 				<a href="/products-add">Editar</a>
 			</p>
@@ -16,9 +16,7 @@
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src="./images/products/default-image.png" alt="" class="product-detail-img">
 					<p class="product-detail-description">
-						Descripción corta del producto. En la página principal solo se ven 2 líneas de estar descripción.Lorem ipsum dolor,
-						sit amet consectetur adipisicing elit. Tae ipsam amet eum, totam dolore libero illo unde? Consectetur dolorem neque
-						veritatis.</p>
+						<%=data.productos.descripcion%></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">

@@ -4,7 +4,7 @@ var products = require("../routes/productoDetalle")
 
 const controller = {
 search: function(req, res, ) {
-       res.render('productoDetalle');
+       res.render('productoDetalle', {data : data});
        
        },
 add: function(req, res, ) {
