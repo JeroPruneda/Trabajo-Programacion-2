@@ -3,7 +3,7 @@ var data = require("../data/db");
 
 const controller = {
     index: function(req, res) {
-        res.render('index', {data : data.productos});
+        res.render('index', {data : data});
     },
     login: function(req, res) {
         res.render('login');

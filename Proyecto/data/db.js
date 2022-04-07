@@ -3,7 +3,7 @@ const data = {
         //Serán los datos del usuario logueado. Los datos deben ser coherentes con la información pedida en el formulario de registro.
     },
 
-    productos: [
+    productos : [
         {marca: "Nike", modelo: "NIKE ZOOM 2K", descripcion: "Las zapatillas gruesas cuentan con una parte superior de cuero, tela y material sintético, así como alas laterales de goma, amortiguación Zoom Air y suela de goma.", imagen: "https://static.runnea.com/images/201901/nike-zoom-2k-ao0354-100-foto-1-XxXx80.jpg?1", fechaDeCarga:"17/03/2022"}, 
         {marca: "Nike", modelo: "NIKE CRATER IMPACT", descripcion: "Crater Impact es un paso en ese viaje. Basado en nuestro espíritu de reciclaje, Crater Impact utiliza desechos de forma encubierta, incorporando contenido reciclado y material de bajo impacto de manera discreta.", imagen: "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0f8a1594-d70f-4e9e-a902-b5a64c39c59a/calzado-crater-impact-0v24WZ.png",fechaDeCarga:"19/03/2022"},
         {marca: "Nike", modelo: "NIKE REACT ART3MIS", descripcion: "tiene estallidos vibrantes de carmesí y voltio y azul claro en los ojales que llaman la atención de muchos. Para mayor comodidad, tiene una espuma React de doble densidad y un cuello acolchado.", imagen: "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/3624a0a1-ce97-412d-885f-dc6d8ef94ff4/calzado-react-art3mis-Hnj2RV.png",fechaDeCarga:"12/01/2022" },
@@ -19,7 +19,7 @@ const data = {
     comentarios: [
         {
             //datos de los comentarios que se ven en el detalle de un producto
-        }
+       }
     ],
 }
 module.exports = data
