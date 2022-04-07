@@ -5,9 +5,9 @@
 <body>
 	<%-include("./partials/header.ejs")%>
 	<!-- Banner -->
-	<!-- <div class="banner">
-		<img src="images/img-home-banner.jpg" alt="Banner de ofertas">
-	</div> -->
+	 <div class="banner">
+		
+	</div> 
 	<!-- /Banner -->
 
 	<!-- Novedades -->
@@ -24,7 +24,7 @@
 								<img src="<%= data.productos[i].imagen%>" alt="zapatillas">
 							</figure>
 							<article class="product-box_data">
-								<h2><%= data.productos[i].marca %></h2>
+								<h2><%= data.productos[i].marca %> <%= data.productos[i].modelo %></h2>
 								<p><%= data.productos[i].descripcion %></p>
 								<p><%= data.comentarios %> </p>
 							</article>
