@@ -6,7 +6,7 @@
 	<%-include("./partials/header.ejs")%>
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= data.productos.marca %> <%= data.productos.modelo %></h2> 
+			<h2 class="products-title"><%= data.productos[1].marca %> <%= data.productos[1].modelo %></h2> 
 			<p class="product-detail-description">
 				<a href="/productoDetalle/add">Editar</a>
 			</p>
