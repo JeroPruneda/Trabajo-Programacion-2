@@ -3,10 +3,12 @@ var data = require("../data/db");
 
 const controller = {
     index: function(req, res) {
-        res.render('index', 
-        {data : data},
-        {logueado:true},
-        {usario:data.usuario},
+        res.render('index', {
+        data : data,
+        logueado:true,
+        usario:data.usuario,
+        productos:data.productos,
+    }
 
         
         );

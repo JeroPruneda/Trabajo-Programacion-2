@@ -3,11 +3,11 @@
 <!-- Include Head -->
 <%-include("./partials/head.ejs")%>
 <body>
-	<%-include("./partials/header.ejs")%>
+
 	<!-- Banner -->
-	 <%if(logueado == false){  %>  
+	 <% if (logueado == false){  %>  
 		<%- include("./partials/header.ejs")   %>  
-		<% }else{  %>  
+		<% } else {  %>  
 			<%- include("./partials/headerLogueado.ejs")  %>  
 			<% }   %>  
 	 
