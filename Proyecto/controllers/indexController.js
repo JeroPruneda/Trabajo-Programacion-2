@@ -10,6 +10,11 @@ const controller = {
         productos: data.productos,
     });
 },
+results: function(req, res) {
+    res.render('index', {
+    data : data,
+});
+},
 
     login: function(req, res) {
         res.render('login',{
