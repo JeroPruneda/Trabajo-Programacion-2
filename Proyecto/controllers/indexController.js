@@ -9,6 +9,7 @@ const controller = {
         usario:data.usuario,
         productos:data.productos,
     }
+    
 
         
         );
