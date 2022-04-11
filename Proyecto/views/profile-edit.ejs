@@ -12,8 +12,33 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
-				hola
+				Mis Datos
 			</h2>
+			<form action="/"> 
+				<div class="mb-3">
+				  <label for="exampleInputEmail1" class="form-label">Email</label>
+				  <input placeholder="mgalperin@udesa.edu.ar" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+				</div>
+				<div class="mb-3">
+				  <label for="exampleInputUser" class="form-label">Usuario</label>
+				  <input placeholder="Marcos Galperin" type="text" class="form-control" id="exampleInputUser">
+				</div>
+				<div class="mb-3">
+					<label for="exampleInputPassword" class="form-label">Contraseña</label>
+					<input placeholder="galperin" type="password" class="form-control" id="exampleInputPassword">
+				</div>
+				<div class="mb-3">
+					<label for="exampleInputFecha" class="form-label">Fecha de nacimiento</label>
+					<input placeholder="12/08/1990" type="date" class="form-control" id="exampleInputFecha">
+
+				</div>
+				<div class="mb-3">
+					<label for="exampleInputDocument" class="form-label">Numero de documento</label>
+					<input placeholder="34789473" type="number" class="form-control" id="exampleInputDocument">
+				</div>
+					<button type="submit" class="btn btn-primary"> Guardar Cambios </button>
+				</div>
+			</form>
 	<%-include("./partials/footer.ejs")%>
 </body>
 </html>
