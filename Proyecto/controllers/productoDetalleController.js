@@ -7,7 +7,7 @@ search: function(req, res, ) {
        res.render('productoDetalle', {data : data});
        },
 add: function(req, res, ) {
-       res.render('products-add');
+       res.render('products-add', {data: data});
        },
 show : function(req, res, next) {
       res.render('products-add');

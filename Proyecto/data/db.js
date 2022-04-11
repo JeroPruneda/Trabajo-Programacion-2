@@ -23,9 +23,7 @@ const data = {
     ],
     
     comentarios: [
-        {
-            //datos de los comentarios que se ven en el detalle de un producto
-       }
+        {}
     ],
 }
 module.exports = data
