@@ -5,7 +5,7 @@ const controller = {
     index: function(req, res) {
         res.render('index', {
         data : data,
-        logueado: true,
+        logueado: false,
         usario: data.usuario,
         productos: data.productos,
     });
