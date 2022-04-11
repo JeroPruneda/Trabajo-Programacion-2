@@ -12,8 +12,10 @@
   --green: #39b54a;
   --base-font-family: 'Roboto', sans-serif
 }
+.Carrito{
+  width: 200px;
 
-
+}
 /*====== Basics ======*/
 * {
   box-sizing: border-box;
