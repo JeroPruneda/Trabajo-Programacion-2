@@ -5,9 +5,7 @@ const controller = {
     index: function(req, res) {
         res.render('index', {
         data : data,
-        logueado: true,
-        usario: data.usuario,
-        productos: data.productos,
+        
     });
 },
 results: function(req, res) {
@@ -19,7 +17,7 @@ results: function(req, res) {
     login: function(req, res) {
         res.render('login',{
             usuario: data.usuario,
-            logueado:true,
+            
         });
 },
 
