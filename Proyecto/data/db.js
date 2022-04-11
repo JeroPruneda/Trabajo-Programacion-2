@@ -1,12 +1,11 @@
 const data = {
     usuario: {
-        email: "ignacioromani@udesa.edu.ar",
-        usuario:"Ignacio02",
-        contraseña:"ignacioromaniudesa",
+        email: "mgalperin@udesa.edu.ar",
+        usuario:"Marcos Galperin",
+        contraseña:"galperin",
         fechaDeNacimiento:'12/08/1990',
         documento:"34789473",
-        fotoDePerfil:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ99aVJMdlKM90gs-wwuYtBlJTZHrZ5l_NEeaYjNDFFNrua_mOBkWePlTWxwrQ5Q7AUr6M&usqp=CAU"
-
+        fotoDePerfil:"https://www.fundacionkonex.org/custom/web/data/imagenes/repositorio/2017/12/12/13362/201712120754000043b0c39eff8099e6fb412b10166e81.jpg"
         //Serán los datos del usuario logueado. Los datos deben ser coherentes con la información pedida en el formulario de registro.
     },
 
