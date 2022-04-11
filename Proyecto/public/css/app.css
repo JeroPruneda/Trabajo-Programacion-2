@@ -9,7 +9,7 @@
   --light-blue: #1259c3;
   --gray: #666666;
   --light-gray: #ebebeb;
-  --green: #39b54a;
+  --green: #39b54a44;
   --base-font-family: 'Roboto', sans-serif
 }
 .Carrito{
@@ -71,12 +71,13 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color: #CEC7B6;
 }
 
 .main-header_home-link{
   width: 30%;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 90%;
 }
 .main-header_credit-link {
   display: block;
@@ -533,4 +534,5 @@ textarea.form-input {
     width: 95%;
     margin: auto;
   }
+ 
 }
