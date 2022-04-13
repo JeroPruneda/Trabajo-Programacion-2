@@ -22,7 +22,11 @@ const data = {
     ],
     
     comentarios: [
-        {}
+        {comentario:" Niceeeeee, price???",persona:"LeBron James", imagen:"https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png"},
+        {comentario:" Me encantann, talle 53 tienen?",persona:"Manu Ginobilli", imagen:"https://media.a24.com/p/0c50184a7ef63789cbe16e76969b4488/adjuntos/296/imagenes/008/968/0008968688/1200x900/smart/ginobilijpg.jpg"},
+        {comentario:" VAMO BOCAAA",persona:"Juan Roman Riquelme", imagen:"https://media.elpatagonico.com/p/ed5720629f455bd90c1c31e6435008f0/adjuntos/193/imagenes/038/101/0038101376/1200x1200/smart/riquelmajpg.jpg"},
+        {comentario:" Buenasss, sale canje??",persona:"Flavio Azzaro", imagen:"https://www.lavoz.com.ar/resizer/TNQz5ryTQr2FHHXmH1P_ry-3qOI=/1023x682/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/GIZTCNBQMZSDMOBYHBSDSZJYGY.jpg"},
+        {comentario:" Tremendas, tienen stock???",persona:"Duko", imagen:"https://i0.wp.com/elplanetaurbano.com/wp-content/uploads/2021/04/DUKO2.jpg?fit=665%2C487&ssl=1"},
     ],
 }
 module.exports = data
