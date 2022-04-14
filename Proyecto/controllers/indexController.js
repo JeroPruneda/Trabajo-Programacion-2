@@ -24,7 +24,7 @@ results: function(req, res) {
     register: function(req, res) {
         res.render('register',{
             usario:data.usuario,
-            logueado:true,
+            
         });
     },
 }
