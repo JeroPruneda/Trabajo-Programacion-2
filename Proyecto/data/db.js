@@ -3,7 +3,7 @@ const data = {
         email: "mgalperin@udesa.edu.ar",
         usuario:"Marcos Galperin",
         contraseña:"galperin",
-        fechaDeNacimiento:'12/08/1990',
+        fechaDeNacimiento: 12/08/1990,
         documento:"34789473",
         fotoDePerfil:"https://www.fundacionkonex.org/custom/web/data/imagenes/repositorio/2017/12/12/13362/201712120754000043b0c39eff8099e6fb412b10166e81.jpg"
     },

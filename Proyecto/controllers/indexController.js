@@ -8,7 +8,7 @@ const controller = {
         
     });
 },
-results: function(req, res) {
+    results: function(req, res) {
     res.render('index', {
     data : data,
 });
