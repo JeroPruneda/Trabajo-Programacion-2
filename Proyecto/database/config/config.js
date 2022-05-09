@@ -1,9 +1,9 @@
-module.exports = {
+module.expots ={
     "development":{
         "username":"root",
-        "password": null,
+        "password":null,
         "database":"zapatillas",
         "host":"127.0.0.1",
-        "dialect":"mysql",
+        "username":"mysql",
     }
 }
