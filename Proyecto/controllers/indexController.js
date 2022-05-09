@@ -8,9 +8,9 @@ const controller = {
         
     });
 },
-results: function(req, res) {
-    res.render('index', {
-    data : data,
+    results: function(req, res) {
+        res.render('index', {
+        data : data,
 });
 },
 
