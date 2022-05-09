@@ -9,7 +9,8 @@ const controller = {
         );
     },
     edit: function(req, res) {
-        res.render('profile-edit');
+        res.render('profile-edit',
+        {usuario: data.usuario});
     },
 }
 
