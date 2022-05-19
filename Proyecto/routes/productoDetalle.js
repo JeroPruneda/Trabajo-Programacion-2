@@ -4,8 +4,7 @@ var controller = require("../controllers/productoDetalleController")
 
 router.get('/', controller.search);
 router.get('/add', controller.add);
-router.post('/add', controller.store);
-
+router.get('/show', controller.show);
 
 
 module.exports = router;
