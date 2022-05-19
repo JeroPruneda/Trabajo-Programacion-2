@@ -6,6 +6,7 @@ router.get('/', controller.index);
 router.get('/login', controller.login);
 router.get('/register', controller.register);
 router.get('/results', controller.results);
-
+router.get('/add', controller.add);
+router.post('/add', controller.store);
 
 module.exports = router;
