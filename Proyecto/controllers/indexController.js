@@ -28,7 +28,7 @@ const controller = {
         });
     },
     add: function(req, res) {
-        res.render('books_add');
+        res.render('products-add');
     },
 
     store: function(req,res){
