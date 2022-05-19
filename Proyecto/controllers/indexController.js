@@ -9,8 +9,8 @@ const controller = {
     });
 },
     results: function(req, res) {
-    res.render('index', {
-    data : data,
+        res.render('index', {
+        data : data,
 });
 },
 
@@ -27,6 +27,27 @@ const controller = {
             
         });
     },
+    add: function(req, res) {
+        res.render('books_add');
+    },
+
+    store: function(req,res){
+        if(!req.body.email){throw Error('Not email provided.')}
+        const hashedContraseña = hasher.hashSync(req.body.contraseña, 10);
+        db.Usuario.create({
+            usuario:req.body.usuario,
+            contraseña:hashedContraseña,
+            email: req.body.email
+
+        })
+        .then(function(){
+            res.redirect('/');
+        })
+        .catch(function(error){
+            res.send(error);
+        })
+    }
+    
 }
 
 module.exports = controller;
