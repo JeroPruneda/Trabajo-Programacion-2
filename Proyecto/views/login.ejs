@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<%-include("./partials/head.ejs")%>
+
+<!-- link de arriba el css -->
+<body>
+	<%-include("./partials/header.ejs")%>
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Ingresar</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<h2 class="col-12"> <form>
+				<div class="mb-3">
+				  <label for="exampleInputUser" class="form-label">Usuario</label>
+				  <input type="text" class="form-control" id="exampleInputUser">
+				</div>
+				<div class="mb-3">
+					<label for="exampleInputPassword" class="form-label">Contraseña</label>
+					<input type="password" class="form-control" id="exampleInputPassword">
+				  </div>
+				  <div class="mb-3">
+					<label for="exampleInputRecordarme" class="form-label">Recordarme</label>
+					<input type="checkbox" class="form-control" id="exampleInputRecordarme">
+				  </div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			  </form>
+			</h2>
+	<%-include("./partials/footer.ejs")%>
+</body>
+</html>
+

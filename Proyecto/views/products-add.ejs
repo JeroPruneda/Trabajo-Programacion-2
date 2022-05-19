@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include("./partials/head.ejs")%>
+
+<body>
+	<%-include("./partials/headerLogueado.ejs")%>
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Tú Carrito 🛒 </h2> 
+		</div>
+		<div class="container products-wrapper">
+			<div class="row">
+				<% for(i=0; i < 4; i++) { %>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href="/productoDetalle">
+								<figure class="product-box_image">
+									<img src="<%= data.productos[i].imagen%>" alt="zapatillas">
+								</figure>
+								<article class="product-box_data">
+									<h2><%= data.productos[i].marca %> <%= data.productos[i].modelo %></h2>
+									<p><%= data.productos[i].descripcion %></p>
+									<p><%= data.productos[i].fechaDeCarga  %> </p>
+									<p>Comentarios: 12</p>
+								</article>
+							</a>
+						</section>
+					</div>
+				<% } %> 
+			</div>	
+		</div>	
+	</div>
+	<%-include("./partials/footer.ejs")%>
+</body>
+</html>
