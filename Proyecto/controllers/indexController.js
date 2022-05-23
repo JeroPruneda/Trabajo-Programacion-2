@@ -1,5 +1,6 @@
-
+const db = require("../database/models")
 var data = require("../data/db");
+const { usuario } = require("../data/db");
 
 const controller = {
     index: function(req, res) {
@@ -49,10 +50,10 @@ const controller = {
     },
     access: function(req, res) {
         res.render('products-add');
-        db.User.findOne({ where: { username: req.body.username }})
+        db.usuarios.findOne({ where: { usuario: req.body.usuario }})
             .then(function(user) {
                 if (!user) throw Error('User not found.')
-                if (hasher.compareSync(req.body.password, user.password)) {
+                if (hasher.compareSync(req.body.contraseña, user.contraseña)) {
                     req.session.user = user;
                     if (req.body.rememberme) {
                         res.cookie('userId', user.id, { maxAge: 1000 * 60 * 60 * 7 })
