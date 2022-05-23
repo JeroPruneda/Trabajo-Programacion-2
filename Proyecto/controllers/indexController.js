@@ -1,6 +1,6 @@
 const db = require("../database/models")
 var data = require("../data/db");
-const { usuario } = require("../data/db");
+
 
 const controller = {
     index: function(req, res) {
@@ -35,7 +35,7 @@ const controller = {
     store: function(req,res){
         if(!req.body.email){throw Error('Not email provided.')}
         const hashedContraseña = hasher.hashSync(req.body.contraseña, 10);
-        db.Usuario.create({
+        db.Usuarios.create({
             usuario:req.body.usuario,
             contraseña:hashedContraseña,
             email: req.body.email
@@ -47,10 +47,10 @@ const controller = {
         .catch(function(error){
             res.send(error);
         })
+        res.render('index');
     },
     access: function(req, res) {
-        res.render('products-add');
-        db.usuarios.findOne({ where: { usuario: req.body.usuario }})
+         db.Usuarios.findOne({ where: { usuario: req.body.usuario }})
             .then(function(user) {
                 if (!user) throw Error('User not found.')
                 if (hasher.compareSync(req.body.contraseña, user.contraseña)) {
@@ -66,6 +66,7 @@ const controller = {
             .catch(function (err) {
                 next(err)
             })
+            res.render('index');
     },
     
 }
