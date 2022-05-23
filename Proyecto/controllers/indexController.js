@@ -46,7 +46,26 @@ const controller = {
         .catch(function(error){
             res.send(error);
         })
-    }
+    },
+    access: function(req, res) {
+        res.render('products-add');
+        db.User.findOne({ where: { username: req.body.username }})
+            .then(function(user) {
+                if (!user) throw Error('User not found.')
+                if (hasher.compareSync(req.body.password, user.password)) {
+                    req.session.user = user;
+                    if (req.body.rememberme) {
+                        res.cookie('userId', user.id, { maxAge: 1000 * 60 * 60 * 7 })
+                    }
+                    res.redirect('/');
+                } else {
+                    throw Error('Invalid credentials.')
+                }
+            })
+            .catch(function (err) {
+                next(err)
+            })
+    },
     
 }
 
