@@ -2,7 +2,7 @@ module.exports = function (sequelize, dataTypes) {
     const alias = "usuarios"
     const cols = {
         id: {
-            autoincrement: true,
+            autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },
@@ -11,11 +11,12 @@ module.exports = function (sequelize, dataTypes) {
         documento: { type: dataTypes.STRING },
         fecha_de_nacimiento: { type: dataTypes.DATE},
         contraseña: { type: dataTypes.STRING }
+        
     }
     const configs = {
         tableName: 'usuarios',
         timestamps: false
     }
-    const Zapatilla = sequelize.define(alias, cols, configs);
+    const Zapatilla = sequelize.define('Usuario', cols, configs);
     return Zapatilla;
 }
