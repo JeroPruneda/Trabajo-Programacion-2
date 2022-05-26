@@ -1,4 +1,4 @@
-// var db = require("../database/models")
+var db = require("../database/models")
 var data = require("../data/db");
 
 
@@ -35,7 +35,7 @@ const controller = {
     store: function(req,res){
         if(!req.body.email){throw Error('Not email provided.')}
         const hashedContraseña = hasher.hashSync(req.body.contraseña, 10);
-        db.Usuario.create({
+        db.Usuarios.create({
             usuario:req.body.usuario,
             contraseña:hashedContraseña,
             email: req.body.email
