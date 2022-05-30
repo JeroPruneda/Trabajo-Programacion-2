@@ -63,12 +63,10 @@ const controller = {
                     throw Error('Invalid credentials.')
                 }
             })
-            .catch(function (err) {
-                next(err)
+            .catch(function (error) {
+                res.send(error);
             })
-            res.render('index');
     },
-    
 }
 
 module.exports = controller;
