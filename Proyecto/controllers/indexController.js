@@ -68,7 +68,11 @@ const controller = {
             })
             res.render('index');
     },
-    
+    logout: function (req, res, next) {
+        req.session.user = null;
+        res.clearCookie('userId');
+        res.redirect('/')
+    },
 }
 
 module.exports = controller;
