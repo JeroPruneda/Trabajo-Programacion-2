@@ -1,4 +1,4 @@
-
+//var db = require("../database/models")
 var data = require("../data/db");
 
 const controller = {
@@ -28,13 +28,13 @@ const controller = {
         });
     },
     add: function(req, res) {
-        res.render('books_add');
+        res.render('products-add');
     },
 
     store: function(req,res){
         if(!req.body.email){throw Error('Not email provided.')}
         const hashedContraseña = hasher.hashSync(req.body.contraseña, 10);
-        db.Usuario.create({
+        db.Usuarios.create({
             usuario:req.body.usuario,
             contraseña:hashedContraseña,
             email: req.body.email
@@ -46,8 +46,31 @@ const controller = {
         .catch(function(error){
             res.send(error);
         })
-    }
-    
+        res.render('index');
+    },
+    access: function(req, res) {
+         db.Usuarios.findOne({ where: { usuario: req.body.usuario }})
+            .then(function(user) {
+                if (!user) throw Error('User not found.')
+                if (hasher.compareSync(req.body.contraseña, user.contraseña)) {
+                    req.session.user = user;
+                    if (req.body.rememberme) {
+                        res.cookie('userId', user.id, { maxAge: 1000 * 60 * 60 * 7 })
+                    }
+                    res.redirect('/');
+                } else {
+                    throw Error('Invalid credentials.')
+                }
+            })
+            .catch(function (error) {
+                res.send(error);
+            })
+    },
+    logout: function (req, res, next) {
+        req.session.user = null;
+        res.clearCookie('userId');
+        res.redirect('/')
+    },
 }
 
 module.exports = controller;

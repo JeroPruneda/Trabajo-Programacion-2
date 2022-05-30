@@ -32,6 +32,24 @@
 			</div>	
 		</div>	
 	</div>
+	<form method="post">
+		<label class="form-label">Marca</label>
+		<input type="text" class="form-control" name="marca" id="marca" />
+	  
+		<label>Modelo</label>
+		<input type="text" class="form-control" name="modelo" id="modelo" />
+	  
+		<label>Descripcion</label>
+		<input type="number" class="form-control" name="descripcion" id="descripcion" />
+	  
+		<label>Fecha de Carga</label>
+		<input type="number" class="form-control" name="fecha" id="fecha" />
+
+		<!-- <label>Cover</label>
+		<input type="file" class="form-control" name="cover" id="cover" /> -->
+	  
+		<button type="submit" class="btn btn-primary">Submit</button>
+	  </form>
 	<%-include("./partials/footer.ejs")%>
 </body>
 </html>
