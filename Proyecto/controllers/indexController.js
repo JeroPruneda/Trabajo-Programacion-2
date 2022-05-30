@@ -63,16 +63,18 @@ const controller = {
                     throw Error('Invalid credentials.')
                 }
             })
-            .catch(function (err) {
-                next(err)
+            .catch(function (error) {
+                res.send(error);
             })
-            res.render('index');
     },
+<<<<<<< HEAD
     logout: function (req, res, next) {
         req.session.user = null;
         res.clearCookie('userId');
         res.redirect('/')
     },
+=======
+>>>>>>> b874d36e2e437cd9609594f8e37231fefd7505c7
 }
 
 module.exports = controller;

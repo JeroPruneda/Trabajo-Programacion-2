@@ -29,6 +29,21 @@ app.use('/', indexRouter);
 app.use('/productoDetalle', productoDetalleRouter);
 app.use("/profile", profileRouter);
 
+// Cookie middleware
+app.use(function(req, res, next) {
+  if (!req.session.user && req.cookies.userId) {
+    // Find the user
+    db.User.findByPk(req.cookies.userId)
+    .then(function(data) {
+      // Act as login
+      req.session.user = data;
+      next();
+    })
+  } else {
+    next();
+  }
+})
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
