@@ -1,4 +1,4 @@
-
+const data = require 
 var data = require("../data/db");
 
 const controller = {
@@ -8,6 +8,7 @@ const controller = {
             data : data}
         );
     },
+    
     edit: function(req, res) {
         res.render('profile-edit',
         {usuario: data.usuario});
