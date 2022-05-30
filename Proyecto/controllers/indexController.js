@@ -1,6 +1,5 @@
-var db = require("../database/models")
+//var db = require("../database/models")
 var data = require("../data/db");
-
 
 const controller = {
     index: function(req, res) {
@@ -63,12 +62,15 @@ const controller = {
                     throw Error('Invalid credentials.')
                 }
             })
-            .catch(function (err) {
-                next(err)
+            .catch(function (error) {
+                res.send(error);
             })
-            res.render('index');
     },
-    
+    logout: function (req, res, next) {
+        req.session.user = null;
+        res.clearCookie('userId');
+        res.redirect('/')
+    },
 }
 
 module.exports = controller;
