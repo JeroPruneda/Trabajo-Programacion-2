@@ -1,6 +1,5 @@
-var db = require("../database/models")
+//var db = require("../database/models")
 var data = require("../data/db");
-
 
 const controller = {
     index: function(req, res) {
@@ -67,14 +66,11 @@ const controller = {
                 res.send(error);
             })
     },
-<<<<<<< HEAD
     logout: function (req, res, next) {
         req.session.user = null;
         res.clearCookie('userId');
         res.redirect('/')
     },
-=======
->>>>>>> b874d36e2e437cd9609594f8e37231fefd7505c7
 }
 
 module.exports = controller;
