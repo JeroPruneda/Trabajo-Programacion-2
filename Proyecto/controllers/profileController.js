@@ -8,6 +8,7 @@ const controller = {
             data : data}
         );
     },
+    
     edit: function(req, res) {
         res.render('profile-edit',
         {usuario: data.usuario});
