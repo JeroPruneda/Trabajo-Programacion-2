@@ -38,7 +38,6 @@ const controller = {
             usuario:req.body.usuario,
             contraseña:hashedContraseña,
             email: req.body.email
-
         })
         .then(function(){
             res.redirect('/');
