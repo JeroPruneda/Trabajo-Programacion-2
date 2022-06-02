@@ -1,5 +1,4 @@
 module.exports = function (sequelize, dataTypes) {
-    const alias = "comentarios"
     const cols = {
         id: {
             autoIncrement: true,

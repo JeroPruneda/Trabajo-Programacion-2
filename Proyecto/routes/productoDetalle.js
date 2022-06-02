@@ -6,5 +6,7 @@ router.get('/', controller.search);
 router.get('/add', controller.add);
 router.get('/show', controller.show);
 
+router.post('/add', controller.guardar);
+
 
 module.exports = router;

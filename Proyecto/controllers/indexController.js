@@ -1,12 +1,9 @@
-//var db = require("../database/models")
+var db = require("../database/models")
 var data = require("../data/db");
 
 const controller = {
     index: function(req, res) {
-        res.render('index', {
-        data : data,
-        
-    });
+        res.render('index', {data : data,});
 },
     results: function(req, res) {
         res.render('index', {
@@ -70,6 +67,7 @@ const controller = {
         res.clearCookie('userId');
         res.redirect('/')
     },
+
 }
 
 module.exports = controller;
