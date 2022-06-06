@@ -1,6 +1,6 @@
 module.exports ={
   "development": {
-    "username": "root",
+    "username": "holaaa",
     "password": "root",
     "database": "datazapa",
     "host": "127.0.0.1",
