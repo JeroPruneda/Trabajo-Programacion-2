@@ -27,10 +27,7 @@ const controller = {
 },
 
     register: function(req, res) {
-        res.render('register',{
-            usuario:data.usuario,
-            
-        });
+        res.render('register');
     },
     add: function(req, res) {
         res.render('products-add');
