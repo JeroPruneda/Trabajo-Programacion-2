@@ -16,6 +16,7 @@ module.exports = function (sequelize, dataTypes) {
         tableName: 'usuarios',
         timestamps: false
     }
+    
     const Zapatilla = sequelize.define('Usuarios', cols, configs);
     return Zapatilla;
 }
