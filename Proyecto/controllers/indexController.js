@@ -3,7 +3,7 @@ var data = require("../data/db");
 
 const controller = {
     index: function(req, res) {
-        res.render('index', {data : data});
+         res.render('index', {data : data});
         // db.Productos.findAll()
         // .then(function (productos) {
         //     res.render('index', { productos });
