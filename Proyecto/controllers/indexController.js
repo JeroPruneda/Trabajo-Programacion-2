@@ -3,7 +3,15 @@ var data = require("../data/db");
 
 const controller = {
     index: function(req, res) {
-        res.render('index', {data : data,});
+        res.render('index', {data : data});
+        // db.Productos.findAll()
+        // .then(function (productos) {
+        //     res.render('index', { productos });
+        // })
+        // .catch(function (error) {
+        //     res.send(error)
+        // });
+     
 },
     results: function(req, res) {
         res.render('index', {
@@ -20,7 +28,7 @@ const controller = {
 
     register: function(req, res) {
         res.render('register',{
-            usario:data.usuario,
+            usuario:data.usuario,
             
         });
     },
@@ -29,20 +37,7 @@ const controller = {
     },
 
     store: function(req,res){
-        if(!req.body.email){throw Error('Not email provided.')}
-        const hashedContraseña = hasher.hashSync(req.body.contraseña, 10);
-        db.Usuarios.create({
-            usuario:req.body.usuario,
-            contraseña:hashedContraseña,
-            email: req.body.email
-        })
-        .then(function(){
-            res.redirect('/');
-        })
-        .catch(function(error){
-            res.send(error);
-        })
-        res.render('index');
+        
     },
     access: function(req, res) {
          db.Usuarios.findOne({ where: { usuario: req.body.usuario }})
