@@ -1,6 +1,6 @@
 module.exports ={
     "development": {
-      "username": "root",
+      "username": "hola",
       "password": "Biologia12345",
       "database": "datazapa",
       "host": "127.0.0.1",
