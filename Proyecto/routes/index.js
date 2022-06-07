@@ -13,8 +13,8 @@ router.post('/register', controller.store);
 
 router.get('/logout', controller.logout);
 
-router.get('/results', controller.results);
-router.get('/add', controller.add);
+// router.get('/results', controller.results);
+// router.get('/add', controller.add);
 
 
 
