@@ -4,7 +4,13 @@ const hasher = require("bcryptjs")
 
 const controller = {
     index: function(req, res) {
-        
+        // db.Productos.findAll()
+        //     .then(function (productos) {
+        //         res.render('index', { productos });
+        //     })
+        //     .catch(function (error) {
+        //         res.send(error)
+        //     });
     },
     login: function(req, res) {
         
