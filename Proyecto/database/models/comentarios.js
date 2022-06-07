@@ -5,8 +5,8 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        marca: { type: dataTypes.STRING },
-        modelo : { type: dataTypes.STRING },
+        content: { type: dataTypes.STRING },
+        user_id : { type: dataTypes.STRING },
         fecha: { type: dataTypes.DATE },
         descripicion: { type: dataTypes.STRING }
     }
@@ -16,4 +16,14 @@ module.exports = function (sequelize, dataTypes) {
     }
     const Zapatilla = sequelize.define('Comentario', cols, configs);
     return Zapatilla;
+
+    Zapatilla.associate = function(models){
+        Zapatilla.belongsTo(models,User, {
+            as:'author',
+            foreignKey :'user_id'
+        });
+        Zapatilla.hasMany(models.Comentarios), {
+            as:'comentarios'
+        }
+    }
 }
