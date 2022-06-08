@@ -47,11 +47,11 @@ access: function(req, res, next) {
     },
     store: async function(req, res, next) {
          try {
-             if (!req.body.usuario) { throw Error('Not username provided.') } 
+            /* if (!req.body.usuario) { throw Error('Not username provided.') } 
             if (!req.body.email) { throw Error('Not email provided.') }
             if (req.body.contraseña.length < 4) { throw Error('Password too short.') }
-             const usuarios = await db.Usuarios.findOne({ where: { email: req.body.email } }) 
-             if (usuarios) { throw Error('Email already in use.') } 
+            const usuarios = await db.Usuarios.findOne({ where: { email: req.body.email } })  
+             if (usuarios) { throw Error('Email already in use.') }    */
         } catch (err) {
             return res.render('register', { error: err.message });
         } 
@@ -97,10 +97,10 @@ access: function(req, res, next) {
             })
     }, */
     logout: function (req, res, next) {
-        req.session.user = null;
-        res.clearCookie('userId');
+        req.session.usuarios = null;
+        res.clearCookie('usuariosId');
         res.redirect('/')
-    },
+    }, 
 
 }
 
