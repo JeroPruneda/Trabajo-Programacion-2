@@ -1,4 +1,5 @@
 var db = require("../database/models")
+<<<<<<< HEAD
 var data = require("../data/db");
 var hasher = require('bcryptjs');
 const { usuario } = require("../data/db");
@@ -94,14 +95,47 @@ access: function(req, res, next) {
             })
             .catch(function (error) {
                 res.send(error);
+=======
+const hasher = require("bcryptjs")
+
+
+const controller = {
+    index: function(req, res) {
+        db.Productos.findAll()
+           .then(function (productos) {
+                 res.render('index', { productos });
+             })
+             .catch(function (error) {
+                 res.send(error)
+             });
+    },
+    login: function(req, res) {
+        
+    },
+    access: function(req, res, next) {
+        db.Usuarios.findOne({where: {usuario: req.body.usuario}})
+            .then (function(user){
+                
+>>>>>>> 02a7e9ba2f9615bc4e287ed7b5bbc353037399fa
             })
     }, */
     logout: function (req, res, next) {
+<<<<<<< HEAD
         req.session.usuarios = null;
         res.clearCookie('usuariosId');
         res.redirect('/')
     }, 
 
+=======
+        
+    },
+    register: function(req, res) {
+        
+    },
+    store: function(req, res) {
+        
+    }
+>>>>>>> 02a7e9ba2f9615bc4e287ed7b5bbc353037399fa
 }
 
 module.exports = controller;

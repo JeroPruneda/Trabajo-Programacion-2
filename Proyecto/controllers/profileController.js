@@ -1,17 +1,18 @@
-
-var data = require("../data/db");
+var db = require("../database/models")
 
 const controller = {
     profile: function(req, res) {
-        res.render('profile',
-        { usuario: data.usuario,
-            data : data}
-        );
+        db.Usuarios.findByPk(req.session.usuario.id, {include })
+        .then(function (user) {
+            res.render('profile', { usuario });
+        })
+        .catch(function (error) {
+            res.send(error)
+        });
     },
     
     edit: function(req, res) {
-        res.render('profile-edit',
-        {usuario: data.usuario});
+        res.render("index", {title: "Editar"})
     },
 }
 

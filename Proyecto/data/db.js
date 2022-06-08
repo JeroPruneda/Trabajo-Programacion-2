@@ -1,7 +1,7 @@
 const data = {
     usuario: {
         email: "mgalperin@udesa.edu.ar",
-        usuario:"Marcos Galperin",
+        usuario: "Marcos Galperin",
         contraseña:"galperin",
         fechaDeNacimiento: 12/08/1990,
         documento:"34789473",
