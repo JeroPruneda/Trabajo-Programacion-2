@@ -1,6 +1,5 @@
 var db = require("../database/models")
 var data = require("../data/db");
-var products = require("../routes/productoDetalle")
 
 const controller = {
 search: function(req, res, ) {

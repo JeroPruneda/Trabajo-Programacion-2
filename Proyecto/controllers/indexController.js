@@ -1,17 +1,16 @@
-var db = require("../database/models")
+var db = require("../database/models");
 const hasher = require("bcryptjs")
 
 
 const controller = {
     index: function(req, res) {
         db.Productos.findAll()
-        .then(function (productos) {
-            res.render('index', { productos : productos });
-        })
-        .catch(function (error) {
-            res.send(error)
-        });
-             
+            .then(function (productos) {
+                res.render('index', { productos : productos });
+            })
+            .catch(function (error) {
+                res.send(error)
+            });
     },
     login: function(req, res) {
         res.render('login', { title: 'Login'});
@@ -36,7 +35,6 @@ const controller = {
                 email: req.body.email,
                 documento: req.body.documento,
                 fecha_de_nacimiento: req.body.fecha_de_nacimiento
-
             })
             .then(function () {
                 res.redirect('/');
