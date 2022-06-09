@@ -4,7 +4,7 @@ const hasher = require("bcryptjs")
 
 const controller = {
     index: function(req, res) {
-        db.Productos.findAll()
+        db.zapas.findAll()
             .then(function (productos) {
                 res.render('/index', { productos : productos });
             })
@@ -20,18 +20,18 @@ const controller = {
     },
     store: async function(req, res, next) {
          try {
-            /* if (!req.body.usuario) { throw Error('Not username provided.') } 
+             if (!req.body.usuario) { throw Error('Not username provided.') } 
             if (!req.body.email) { throw Error('Not email provided.') }
-            if (req.body.contraseña.length < 4) { throw Error('Password too short.') }
+            if (req.body.contrasenia.length < 4) { throw Error('Password too short.') }
             const usuarios = await db.Usuarios.findOne({ where: { email: req.body.email } })  
-             if (usuarios) { throw Error('Email already in use.') }    */
+             if (usuarios) { throw Error('Email already in use.') }    
         } catch (err) {
             return res.render('register', { error: err.message });
         } 
-        const hashedPassword = hasher.hashSync(req.body.contraseña, 10);
+        const hashedPassword = hasher.hashSync(req.body.contrasenia, 10);
         db.Usuarios.create({
                 usuario: req.body.usuario,
-                contraseña: hashedPassword,
+                contrasenia: hashedPassword,
                 email: req.body.email,
                 documento: req.body.documento,
                 fecha_de_nacimiento: req.body.fecha_de_nacimiento
