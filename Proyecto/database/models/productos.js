@@ -8,7 +8,7 @@ module.exports = function (sequelize, dataTypes) {
         marca: { type: dataTypes.STRING },
         modelo : { type: dataTypes.STRING },
         fecha: { type: dataTypes.DATE },
-        descripicion: { type: dataTypes.STRING }
+        descripcion: { type: dataTypes.STRING }
     }
     const configs = {
         tableName: 'productos',
