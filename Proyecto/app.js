@@ -10,9 +10,13 @@ var indexRouter = require('./routes/index');
 var productoDetalleRouter = require('./routes/productoDetalle');
 var profileRouter = require("./routes/profile");
 
-
-
 var app = express();
+
+app.use(session({
+  secret: 'a_secret_word',
+  resave: false,
+  saveUninitialized: true
+}))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,10 +27,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/productoDetalle', productoDetalleRouter);
-app.use("/profile", profileRouter);
 
 // Cookie middleware
 app.use(function(req, res, next) {
@@ -42,6 +42,18 @@ app.use(function(req, res, next) {
     next();
   }
 })
+
+// Session middleware
+app.use(function(req, res, next) {
+  res.locals.user = req.session.user;
+  next();
+})
+
+app.use('/', indexRouter);
+app.use('/productoDetalle', productoDetalleRouter);
+app.use("/profile", profileRouter);
+
+
 
 
 // catch 404 and forward to error handler

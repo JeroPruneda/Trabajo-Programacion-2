@@ -1,4 +1,4 @@
-const data = {
+/* const data = {
     usuario: {
         email: "mgalperin@udesa.edu.ar",
         usuario: "Marcos Galperin",
@@ -30,3 +30,4 @@ const data = {
     ],
 }
 module.exports = data
+ */

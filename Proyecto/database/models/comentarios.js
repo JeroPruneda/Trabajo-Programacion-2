@@ -8,7 +8,7 @@ module.exports = function (sequelize, dataTypes) {
         content: { type: dataTypes.STRING },
         user_id : { type: dataTypes.STRING },
         fecha: { type: dataTypes.DATE },
-        descripicion: { type: dataTypes.STRING }
+        descripcion: { type: dataTypes.STRING }
     }
     const configs = {
         tableName: 'comentarios',

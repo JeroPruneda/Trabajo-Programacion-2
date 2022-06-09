@@ -1,5 +1,5 @@
 var db = require("../database/models")
-var data = require("../data/db");
+var data = require("../data/dbd");
 
 const controller = {
 search: function(req, res, ) {
