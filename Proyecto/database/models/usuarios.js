@@ -17,6 +17,6 @@ module.exports = function (sequelize, dataTypes) {
         timestamps: false
     }
     
-    const Zapatilla = sequelize.define('Usuarios', cols, configs);
-    return Zapatilla;
+    const Usuario= sequelize.define('Usuarios', cols, configs);
+    return Usuario;
 }

@@ -14,8 +14,8 @@ module.exports = function (sequelize, dataTypes) {
         tableName: 'comentarios',
         timestamps: false
     }
-    const Zapatilla = sequelize.define('Comentario', cols, configs);
-    return Zapatilla;
+    const Comentarios = sequelize.define('Comentario', cols, configs);
+    return Comentarios;
 
     Zapatilla.associate = function(models){
         Zapatilla.belongsTo(models,User, {
