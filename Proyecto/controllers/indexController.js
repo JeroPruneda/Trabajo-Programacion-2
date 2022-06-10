@@ -45,19 +45,21 @@ const controller = {
     },
     access: function(req, res, next) {
         db.Usuarios.findOne({where: {usuario: req.body.usuario}})
-    
-            // .then (function(user){
-            //     if (!user) throw Error('User not found.')
-            //     if (hasher.compareSync(req.body.password, user.password)) {
-            //         req.session.user = user;
-            //         if (req.body.rememberme) {
-            //             res.cookie('userId', user.id, { maxAge: 1000 * 60 * 60 * 7 })
-            //         }
-            //         res.redirect('/');
-            //     } else {
-            //         throw Error('Invalid credentials.')
-            //     }
-            // })
+        .then (function(usuario){
+                if (!usuario) throw Error('User not found.')
+                if (hasher.compareSync(req.body.contrasenia, usuario.contrasenia)) {
+                    req.session.usuario = usuario;
+                    // if (req.body.rememberme) {
+                    //     res.cookie('userId', usuario.id, { maxAge: 1000 * 60 * 60 * 7 })
+                    // }
+                    res.redirect('index');
+                } else {
+                    throw Error('Invalid credentials.')
+                }
+            })
+            .catch(function (error) {
+                res.send(error);
+            })
     }, 
     logout: function (req, res, next) {
         req.session.usuarios = null;
