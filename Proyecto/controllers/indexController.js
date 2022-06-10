@@ -6,7 +6,7 @@ const controller = {
     index: function(req, res) {
         db.zapas.findAll()
             .then(function (productos) {
-                res.render('/index', { productos : productos });
+                res.render('index', { productos : productos });
             })
             .catch(function (error) {
                 res.send(error)
