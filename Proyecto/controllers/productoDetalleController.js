@@ -2,7 +2,7 @@ var db = require("../database/models")
 var data = require("../data/dbd");
 
 const controller = {
-search: function(req, res, ) {
+detalle: function(req, res, ) {
        res.render('productoDetalle', {data : data});
        },
 add: function(req, res, ) {

@@ -7,7 +7,7 @@
 	<%-include("./partials/header.ejs")%>
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= data.productos[1].marca %> <%= data.productos[1].modelo %></h2> 
+			<h2 class="products-title"><%= productos[1].marca %> <%= productos[1].modelo %></h2> 
 			<!-- <p class="product-detail-description">
 				<a href="/productoDetalle/add">Agregar</a>
 			</p> -->
@@ -15,21 +15,21 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= data.productos[1].imagen%>" alt="" class="product-detail-img">
+					<img src="<%= productos[1].imagenes%>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
-						<%=data.productos.descripcion%></p>
+						<%=productos.descripcion%></p>
 				</article>
 			
 				<div class="col-12 col-lg-4">
-					<% for(i=0; i < data.comentarios.length; i++) { %>
+					<% for(i=0; i < comentarios.length; i++) { %>
 					<section class="comments">
 						<article> 
 							
-							<img src="<%= data.comentarios[i].imagen %> " alt="">
+							<img src="<%= comentarios[i].imagen %> " alt="">
 							<div class="data">
 								<p class="user">
-									<strong> <a href="/profile"> <%= data.comentarios[i].persona %>   </a> </strong>
-									<%= data.comentarios[i].comentario %> 
+									<strong> <a href="/profile"> <%= comentarios[i].persona %>   </a> </strong>
+									<%= comentarios[i].comentario %> 
 								</p>
 							 %>
 							</div>
