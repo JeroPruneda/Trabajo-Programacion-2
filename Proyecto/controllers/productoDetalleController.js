@@ -3,8 +3,14 @@ var data = require("../data/dbd");
 
 const controller = {
 detalle: function(req, res, ) {
-       res.render('productoDetalle', {data : data});
-       },
+       db.zapas.findAll({include: [{association: "comentarios"}]})
+       .then(function (productos) {
+           res.render('index', { productos : productos });
+       })
+       .catch(function (error) {
+           res.send(error)
+       });
+},
 add: function(req, res, ) {
        res.render('products-add', {data: data});
        },
