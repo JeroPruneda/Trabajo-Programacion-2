@@ -1,16 +1,18 @@
 var db = require("../database/models");
+var op = db.Sequelize.Op;
 const hasher = require("bcryptjs")
 
 
 const controller = {
     index: function(req, res) {
-        db.zapas.findAll()
+            res.redirect('index');
+        /* db.zapas.findAll()
             .then(function (productos) {
                 res.render('index', { productos : productos });
             })
             .catch(function (error) {
                 res.send(error)
-            });
+            }); */ 
     },
     login: function(req, res) {
         res.render('login', { title: 'Login'});
@@ -48,11 +50,11 @@ const controller = {
         .then (function(usuario){
                 if (!usuario) throw Error('User not found.')
                 if (hasher.compareSync(req.body.contrasenia, usuario.contrasenia)) {
-                    // req.session.usuario = usuario;
+                     req.session.usuario = usuario;
                     res.redirect('/');
-                    // if (req.body.rememberme) {
-                    //     res.cookie('userId', usuario.id, { maxAge: 1000 * 60 * 60 * 7 })
-                    // }
+                    if (req.body.rememberme) {
+                         res.cookie('usuarioId', usuario.id, { maxAge: 1000 * 60 * 60 * 7 })
+                     }
                     
                 } else {
                     throw Error('Invalid credentials.')
