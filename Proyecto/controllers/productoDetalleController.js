@@ -19,7 +19,13 @@ show : function(req, res, next) {
 
        },
 guardar: function(req, res) {
-              res.send(req.body);
+       db.zapas.create(req.body)
+       .then(function () {
+           res.redirect('index')
+       })
+       .catch(function (error) {
+           res.send(error)
+       });
        }
 }
 module.exports = controller;

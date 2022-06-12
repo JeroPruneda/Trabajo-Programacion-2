@@ -5,14 +5,13 @@ const hasher = require("bcryptjs")
 
 const controller = {
     index: function(req, res) {
-            res.redirect('index');
-        /* db.zapas.findAll()
+            db.zapas.findAll()
             .then(function (productos) {
                 res.render('index', { productos : productos });
             })
             .catch(function (error) {
                 res.send(error)
-            }); */ 
+            });  
     },
     login: function(req, res) {
         res.render('login', { title: 'Login'});
