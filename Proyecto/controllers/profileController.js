@@ -1,9 +1,18 @@
 var db = require("../database/models")
 
 const controller = {
-    profile: function(req, res) {
+    myProfile: function(req, res) {
         db.Usuarios.findByPk(req.session.usuario.id, { include: [ { association: 'productos' } ] })
-            .then(function (user) {
+            .then(function (usuario) {
+                res.render('profile', { usuario : usuario });
+            })
+            .catch(function (error) {
+                res.send(error)
+            });
+    },
+    profile: function(req, res) {
+        db.Usuarios.findByPk(req.params.id, { include: [ { association: 'productos' } ] })
+            .then(function (usuario) {
                 res.render('profile', { usuario });
             })
             .catch(function (error) {
@@ -13,21 +22,7 @@ const controller = {
     edit: function(req, res) {
         res.render('index', { title: 'Edit'});
     }
-}
-    /* profile: function(req, res) {
-        db.Usuarios.findByPk(req.session.usuario.id, {include })
-        db.Usuarios.findByPk(req.session.usuario.id, {include: [{association: "usuarios"}] })
-        .then(function (user) {
-            res.render('profile', { usuario });
-        })
-        .catch(function (error) {
-            res.send(error)
-        });
-    },
-    
-    edit: function(req, res) {
-        res.render("index", {title: "Editar"})
-    }, */
+    }
 
 
 module.exports = controller;
