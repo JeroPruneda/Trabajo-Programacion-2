@@ -12,8 +12,11 @@ detalle: function(req, res, ) {
        });
 },
 add: function(req, res, ) {
-       res.render('products-add', {data: data});
-       },
+    if (!req.session.user) { 
+        throw Error('Not authorized.')
+    }
+    res.render('products-add');
+},
 show : function(req, res, next) {
       res.render('products-add');
 
