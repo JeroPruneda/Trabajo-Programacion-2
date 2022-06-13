@@ -56,11 +56,11 @@
         </nav>
     </div>
     
-        <div class="">
+        <div class="container">
             <ul class="right-navbar">
               <% if (locals.usuario) { %>
                 <li class="nav-item">
-                  <a class="nav-link"> Hello <%= usuario.usuario %></a>
+                  <a class="nav-link"> Hola <%= usuario.usuario %></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/profile">Mi perfil</a>
@@ -69,7 +69,7 @@
                   <a class="nav-link" href="/productoDetalle/add">Agregar Zapatilla</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/logout"> Logout</a>
+                  <a class="nav-link" href="/"> Logout</a>
                 </li>
               <% } else { %>
                <nav class="main-navbar"> 
