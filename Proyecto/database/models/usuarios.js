@@ -19,12 +19,12 @@ module.exports = function (sequelize, dataTypes) {
     
     const Usuario= sequelize.define('Usuarios', cols, configs);
    
-    // Usuario.associate = function(models){
-    //     Usuario.hasMany(models.zapas, {
-    //         as:'zapas',
-    //         foreignKey :'zapas_id'
-    //     });
-    // }
+   /*  Usuario.associate = function(models){
+         Usuario.hasMany(models.zapas, {
+           as:'zapas',
+           foreignKey :'zapas_id'
+     });
+    }  */
         
     return Usuario;
 }
