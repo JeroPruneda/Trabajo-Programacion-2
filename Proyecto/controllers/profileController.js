@@ -12,7 +12,7 @@ const controller = {
             });
     },
     profile: function(req, res) {
-        db.Usuarios.findByPk(req.params.id, { include: [ { association: 'productos' } ] })
+        db.Usuarios.findByPk(req.params.id, { includes: [ { association: 'productos' } ] })
             .then(function (usuario) {
                 res.render('profile', { usuario });
             })
