@@ -22,7 +22,7 @@ module.exports = function (sequelize, dataTypes) {
    /*  Usuario.associate = function(models){
          Usuario.hasMany(models.zapas, {
            as:'zapas',
-           foreignKey :'zapas_id'
+           foreignKey :'usuariosId'
      });
     }  */
         
