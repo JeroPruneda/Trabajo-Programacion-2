@@ -12,9 +12,6 @@ detalle: function(req, res, ) {
        });
 },
 add: function(req, res, ) {
-    if (!req.session.user) { 
-        throw Error('Not authorized.')
-    }
     res.render('products-add');
 },
 show : function(req, res, next) {
@@ -22,6 +19,7 @@ show : function(req, res, next) {
 
        },
 guardar: function(req, res) {
+    req.body.usuarioId = req.session.usaurio
        db.zapas.create(req.body)
        .then(function () {
            res.redirect('add')

@@ -14,17 +14,16 @@ module.exports = function (sequelize, dataTypes) {
         tableName: 'comentarios',
         timestamps: false
     }
+    
     const Comentarios = sequelize.define('Comentario', cols, configs);
-   
-    // Comentarios.associate = function(models){
-    //     Comentarios.belongsTo(models.zapas, {
-    //         as:'zapas',
-    //         foreignKey :'zapas_id'
-    //     });
+    Comentarios.associate = function(models){
+        Comentarios.belongsTo(models.zapas, {
+           as:'zapas',
+           foreignKey :'zapas_id'
+      });
         
-    // }
+}
     return Comentarios;
-
     Comentarios.associate = function(models){
         Comentarios.belongsTo(models.zapas, {
             as:'author',
@@ -34,4 +33,5 @@ module.exports = function (sequelize, dataTypes) {
             as:'comentarios'
         }
     }
+    
 }
