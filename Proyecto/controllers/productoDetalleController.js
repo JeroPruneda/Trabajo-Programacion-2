@@ -3,9 +3,9 @@ var data = require("../data/dbd");
 
 const controller = {
 detalle: function(req, res, ) {
-       db.zapas.findAll({include: [{association: "comentarios"}]})
+       db.zapas.findByPk(req.params.id)
        .then(function (productos) {
-           res.render('index', { productos : productos });
+           res.render('productoDetalle', { productos : productos });
        })
        .catch(function (error) {
            res.send(error)
