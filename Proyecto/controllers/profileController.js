@@ -4,7 +4,7 @@ const controller = {
     myProfile: function(req, res) {
         db.Usuarios.findByPk(req.session.usuario.id, { include: [ { association: 'productos' } ] })
             .then(function (usuario) {
-                console.log(usuario);
+                console.log(usuarios);
                 res.render('profile', { usuario : usuario });
             })
             .catch(function (error) {
