@@ -21,7 +21,7 @@ show : function(req, res, next) {
 guardar: function(req, res) {
        db.zapas.create(req.body)
        .then(function () {
-           res.redirect('index')
+           res.redirect('add')
        })
        .catch(function (error) {
            res.send(error)
