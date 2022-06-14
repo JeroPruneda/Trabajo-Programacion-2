@@ -1,5 +1,5 @@
 var db = require("../database/models");
-/* var op = db.Sequelize.Op; */
+var op = db.Sequelize.Op;
 const hasher = require("bcryptjs")
 
 
