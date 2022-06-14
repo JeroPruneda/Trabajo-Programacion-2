@@ -17,14 +17,14 @@ module.exports = function (sequelize, dataTypes) {
         timestamps: false
     }
     
-    const Usuario= sequelize.define('Usuarios', cols, configs);
+    const Usuario = sequelize.define('Usuarios', cols, configs);
    
-//    Usuario.associate = function(models){
-//          Usuario.hasMany(models.zapas, {
-//            as:'productos',
-//            foreignKey :'usuariosId'
-//      });
-//     }
+    /* Usuario.associate = function(models){
+        Usuario.hasMany(models.zapas, {
+          as:'productos',
+           foreignKey :'usuariosId'
+     });
+} */
         
     return Usuario;
 }

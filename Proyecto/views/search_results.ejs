@@ -1,0 +1,11 @@
+<%- include('./partials/headerLogueado.ejs') %>
+
+<h1><%= zapas.marca %></h1>
+<ul>
+  <li><b>descripción:</b> <%= zapas.descripcion %></li>
+  <li><b>modelo:</b>$ <%= zapas.modelo  %></li>
+</ul>
+<img src="<%= zapas.imagenes %>" style="max-width: 200px;">
+
+
+<%- include('./partials/footer.ejs') %>

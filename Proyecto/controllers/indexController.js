@@ -4,10 +4,11 @@ const hasher = require("bcryptjs")
 
 
 const controller = {
+    
     index: function(req, res) {
-            db.zapas.findAll()
+        db.zapas.findAll()
             .then(function (productos) {
-                res.render('index', { productos : productos });
+                res.render('index', { productos });
             })
             .catch(function (error) {
                 res.send(error)
@@ -63,6 +64,24 @@ const controller = {
                 res.send(error);
             })
     }, 
+    
+    search: function (req, res) {
+        db.zapas.findAll({
+            where: {
+                [op.or]: [
+                    {marca: {[op.like]: "%"+req.query.criteria+"%"}},
+                    {modelo: {[op.like]: "%"+req.query.criteria+"%"}}
+                ]
+            },
+        })
+        .then(function (productos) {
+            res.render("index", {productos});
+        })
+        .catch (function (erorr) {
+            res.send(error)
+        });
+    },
+
     logout: function (req, res, next) {
         req.session.usuarios = null;
         res.clearCookie('usuariosId');

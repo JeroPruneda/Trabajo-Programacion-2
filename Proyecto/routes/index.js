@@ -4,6 +4,7 @@ var controller = require('../controllers/indexController')
 
 
 router.get('/', controller.index);
+router.get("/search-results", controller.search);
 
 router.get('/login', controller.login);
 router.post('/login', controller.access);
