@@ -19,7 +19,11 @@ show : function(req, res, next) {
 
        },
 guardar: function(req, res) {
+    if (!req.session.usaurio) { 
+        return res.render('products-add', { error: 'Not authorized.' });
+    }
     req.body.usuarioId = req.session.usaurio
+    if (req.file) req.body.cover = (req.file.path).replace('public', '');
        db.zapas.create(req.body)
        .then(function () {
            res.redirect('add')

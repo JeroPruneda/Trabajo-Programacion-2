@@ -20,7 +20,7 @@ const controller = {
     register: function(req, res) {
         res.render('register');
     },
-    store: async function(req, res, next) {
+    register2: async function(req, res, next) {
          try {
              if (!req.body.usuario) { throw Error('Not username provided.') } 
             if (!req.body.email) { throw Error('Not email provided.') }
