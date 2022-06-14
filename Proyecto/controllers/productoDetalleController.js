@@ -5,7 +5,7 @@ const controller = {
 detalle: function(req, res, ) {
        db.zapas.findByPk(req.params.id)
        .then(function (productos) {
-           res.render('productoDetalle', { productos : productos });
+           res.render('productoDetalle', { productos });
        })
        .catch(function (error) {
            res.send(error)

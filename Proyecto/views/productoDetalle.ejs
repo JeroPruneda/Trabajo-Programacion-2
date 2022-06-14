@@ -16,26 +16,34 @@
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src="<%= %>" alt="" class="product-detail-img">
-					<p class="product-detail-description">
-						<%=%></p>
+					<h1 class="product-detail-description">
+						<%=productos.marca%> <%=productos.modelo%> </h1>
+						<img src="<%= productos.imagenes %> " alt="">
+						
+						<section class="comments">
+							<article>
+								<div class="data">
+									<p class="user">
+										<%=productos.descripcion%>
+									</p>
+								 </div>
+							</article>
+						</section>
+
 				</article>
 			
 				<div class="col-12 col-lg-4">
-					<% for(i=0; i < productos.comentarios.length; i++) { %>
+					
 					<section class="comments">
-						<article> 
-							
-							<img src="<%= comentarios[i].imagen %> " alt="">
+						<article>
 							<div class="data">
 								<p class="user">
-									<strong> <a href="/profile"> <%= comentarios[i].persona %>   </a> </strong>
-									<%= productos.comentarios[i].comentario %> 
+									COMENTARIOS SOBRE EL PRODUCTO: 
 								</p>
-							 %>
-							</div>
+							 </div>
 						</article>
 					</section>
-				<% } %> 
+				 
 				</div>
 				<form class="form" action="" method="post">
 					<input class="form-input" type="text" value="" placeholder="Agregar comentario">

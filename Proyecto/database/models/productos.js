@@ -17,15 +17,15 @@ module.exports = function (sequelize, dataTypes) {
     }
     const Productos = sequelize.define('zapas', cols, configs);
     
-    // Productos.associate = function(models){
-    //     Productos.belongsTo(models.Usuarios, {
-    //         as:'usuarios',
-    //         foreignKey :'usuario_id'
-    //     });
-    //      Productos.hasMany(models.Comentario), {
-    //         as:'comentarios',
-    //         foreignKey :'cometarios_id'
-    //     }
-    // }
+     /* Productos.associate = function(models){
+         Productos.belongsTo(models.Usuarios, {
+             as:'usuarios',
+             foreignKey :'usuario_id'
+         });
+          Productos.hasMany(models.Comentario), {
+             as:'comentarios',
+             foreignKey :'cometarios_id'
+     }
+ } */
     return Productos;
     }
