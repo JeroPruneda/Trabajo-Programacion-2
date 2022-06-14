@@ -10,7 +10,7 @@ router.get('/login', controller.login);
 router.post('/login', controller.access);
 
 router.get('/register', controller.register);
-router.post('/register', controller.store);
+router.post('/register', controller.register2);
 
 router.get('/logout', controller.logout);
 

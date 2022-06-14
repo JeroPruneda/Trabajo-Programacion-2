@@ -6,12 +6,15 @@ const upload = multer({ dest: 'public/images/uploads' });
 
 
 router.get('/add', controller.add);
+router.post('/add', upload.single('imagenes'), controller.guardar);
+
+
 router.get('/show', controller.show);
 router.get('/:id', controller.detalle);
-router.post('/add', controller.guardar);
 
-router.post('/:id/edit', upload.single('cover'), controller.update);
-router.post('/add', upload.single('cover'), controller.store);
+
+/* router.post('/:id/edit', upload.single('cover'), controller.update); */
+
 
 
 module.exports = router;
