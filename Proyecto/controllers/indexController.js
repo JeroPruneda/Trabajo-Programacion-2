@@ -83,8 +83,8 @@ const controller = {
     },
 
     logout: function (req, res, next) {
-        req.session.usuarios = null;
-        res.clearCookie('usuarioId');
+        req.session.usuario = null;
+        res.clearCookie('usuariosId');
         res.redirect('/')
     }, 
 

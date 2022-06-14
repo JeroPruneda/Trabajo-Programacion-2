@@ -37,12 +37,12 @@ app.use(function(req, res, next) {
 
 // Cookie middleware
 app.use(function(req, res, next) {
-  if (!req.session.usuario && req.cookies.userId) {
+  if (!req.session.usuario && req.cookies.usuariosId) {
     // Find the user
-    db.Usuarios.findByPk(req.cookies.userId)
-    .then(function(user) {
+    db.Usuarios.findByPk(req.cookies.usuariosId)
+    .then(function(usuario) {
       // Act as login
-      req.session.user = user;
+      req.session.usuario = usuario;
       next();
     })
   } else {
@@ -59,7 +59,7 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 app.use(function(req, res, next) {
-  res.locals.user = req.session.user;
+  res.locals.usuario = req.session.usuario;
   next();
 })
 // error handler
