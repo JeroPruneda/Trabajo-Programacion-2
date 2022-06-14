@@ -77,7 +77,7 @@ const controller = {
         .then(function (productos) {
             res.render("index", {productos});
         })
-        .catch (function (erorr) {
+        .catch (function (error) {
             res.send(error)
         });
     },
