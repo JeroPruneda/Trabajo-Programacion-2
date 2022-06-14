@@ -3,9 +3,9 @@ var db = require("../database/models")
 const controller = {
     myProfile: function(req, res) {
         db.Usuarios.findByPk(req.session.usuario.id, { include: [ { association: 'productos' } ] })
-            .then(function (Usuarios) {
+            .then(function (usuario) {
                 
-                res.render('profile', { Usuarios : usuario });
+                res.render('profile', { usuario : usuario });
             })
             .catch(function (error) {
                 res.send(error)

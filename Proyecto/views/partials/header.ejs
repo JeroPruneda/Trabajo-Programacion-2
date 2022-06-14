@@ -57,23 +57,26 @@
     </div>
     
         <div class="container">
-            <ul class="right-navbar">
+        
+            
               <% if (locals.usuario) { %>
+            <ul class="right-navbar">
                 <li class="nav-item">
-                  <a class="nav-link"> Hola <%= usuario.usuario %></a>
+                  <a class="fas fa-user"> Hola <%= usuario.usuario %></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/profile/<%= usuario.id %>">Mi perfil</a>
+                    <a class="fas fa-user" href="/profile/<%= usuario.id %>"> Mi perfil</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/productoDetalle/add">Agregar zapatilla</a>
+                  <a class="fas fa-user" href="/productoDetalle/add"> Agregar zapatilla</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/"> Cerrar sesión</a>
+                  <a class="fas fa-user" href="/"> Cerrar sesión</a>
                 </li>
+            </ul>
               <% } else { %>
                <nav class="main-navbar"> 
-        
+            
                     <ul class="right-navbar">
                         <li><a href="/login"> Ingresá <i class="fas fa-user"></i>
                             </a>
