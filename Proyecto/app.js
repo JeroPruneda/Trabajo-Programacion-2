@@ -39,9 +39,9 @@ app.use(function(req, res, next) {
 
 // Cookie middleware
 app.use(function(req, res, next) {
-  if (!req.session.usuario && req.cookies.usuariosId) {
+  if (!req.session.usuario && req.cookies.usuarioId) {
     // Find the user
-    db.Usuarios.findByPk(req.cookies.usuariosId)
+    db.Usuarios.findByPk(req.cookies.usuarioId)
     .then(function(usuario) {
       // Act as login
       req.session.usuario = usuario;
