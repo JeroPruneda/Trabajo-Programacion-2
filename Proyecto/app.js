@@ -57,9 +57,9 @@ app.use('/productoDetalle', productoDetalleRouter);
 app.use("/profile", profileRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+/* app.use(function(req, res, next) {
   next(createError(404));
-});
+}); */
 app.use(function(req, res, next) {
   res.locals.usuario = req.session.usuario;
   next();

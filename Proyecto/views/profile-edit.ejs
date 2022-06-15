@@ -3,7 +3,7 @@
 <%-include("./partials/head.ejs")%>
 
 <body>
-	<%-include("./partials/headerLogueado.ejs")%>
+	<%-include("./partials/header.ejs")%>
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
@@ -14,27 +14,27 @@
 			<h2 class="col-12"> 
 				Mis Datos
 			</h2>
-			<form action="/"> 
+			<form  method="post" enctype="multipart/form-data"> 
 				<div class="mb-3">
-				  <label for="exampleInputEmail1" class="form-label">Email</label>
-				  <input placeholder= <%= usuario.email %>  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+				  <label for="email" class="form-label">Email</label>
+				  <input   type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value= <%= usuario.email %>>
 				</div>
 				<div class="mb-3">
-				  <label for="exampleInputUser" class="form-label">Usuario</label>
-				  <input placeholder= <%= usuario.usuario %>  type="text" class="form-control" id="exampleInputUser">
+				  <label for="usuario" class="form-label">Usuario</label>
+				  <input value= <%= usuario.usuario %>  type="text" class="form-control" id="usuario">
 				</div>
 				<div class="mb-3">
 					<label for="exampleInputPassword" class="form-label">Contraseña</label>
-					<input placeholder= <%= usuario.contraseña%>  type="password" class="form-control" id="exampleInputPassword">
+					<input value= <%= usuario.contrasenia%>  type="password" class="form-control" id="contrasenia">
 				</div>
 				<div class="mb-3">
-					<label for="exampleInputFecha" class="form-label">Fecha de nacimiento</label>
-					<input placeholder= "12/08/1990"  type="number" class="form-control" id="exampleInputFecha">
+					<label for="fecha_de_nacimiento" class="form-label">Fecha de nacimiento</label>
+					<input value= <%= usuario.fecha_de_nacimiento%>  type="date" class="form-control" id="fecha_de_nacimiento">
 
 				</div>
 				<div class="mb-3">
-					<label for="exampleInputDocument" class="form-label">Numero de documento</label>
-					<input placeholder= <%= usuario.documento %>  type="number" class="form-control" id="exampleInputDocument">
+					<label for="documento" class="form-label">Numero de documento</label>
+					<input value= <%= usuario.documento %>  type="number" class="form-control" id="documento">
 				</div>
 					<button type="submit" class="btn btn-primary"> Guardar Cambios </button>
 				</div>

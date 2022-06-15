@@ -4,11 +4,8 @@
 	<%-include("./partials/head.ejs")%>
 	
 <body>
-	<% if (usuario!= null) { %>
-		<%- include("./partials/header.ejs") %>
-	<% } else { %>
-		<%- include("./partials/headerLogueado.ejs")%>
-	<% } %>
+	<%-include("./partials/header.ejs")%>
+	
 	<!-- Datos del usuario -->
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
@@ -17,8 +14,8 @@
 			</div>  
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"><%= usuario.usuario %> 
-						<a href="/profile/edit">
+					<h1 class="main-title"> <%= usuario.usuario %>
+						<a href="/profile/me/edit" action>
 							<i class="fas fa-cog"></i>
 						</a>
 					</h1>
