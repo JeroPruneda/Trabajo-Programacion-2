@@ -19,11 +19,11 @@ show : function(req, res, next) {
 
        },
 guardar: function(req, res) {
-    if (!req.session.usaurio) { 
-        return res.render('products-add', { error: 'Not authorized.' });
-    }
-    req.body.usuarioId = req.session.usaurio
-    if (req.file) req.body.cover = (req.file.path).replace('public', '');
+    // if (!req.session.usaurio) { //Si ponemos esto, no nos anda el agrega, porque toma este error, ya que no nos funciona las cookies entonces lo toma como si NO estuviera logueado entonces no te deja subirlo
+    //     return res.render('products-add', { error: 'Not authorized.' });
+    // }
+     req.body.usuarioId = req.session.usaurio
+     if (req.file) req.body.cover = (req.file.path).replace('public', '');
        db.zapas.create(req.body)
        .then(function () {
            res.redirect('add')
