@@ -45,16 +45,16 @@ const controller = {
                 res.send(error);
             })
     },
-    access: function(req, res, next) {
+    access: async function(req, res, next) {
         db.Usuarios.findOne({where: {usuario: req.body.usuario}})
         .then (function(usuario){
-                if (!usuario) throw Error('User not found.')
-                if (hasher.compareSync(req.body.contrasenia, usuario.contrasenia)) {
-                     req.session.usuario = usuario;
-                    res.redirect('/');
-                    if (req.body.rememberme) {
-                         res.cookie('usuarioId', usuario.id, { maxAge: 1000 * 60 * 60 * 7 })
-                     }
+            if (!usuario) throw Error('User not found.')
+             if (hasher.compareSync(req.body.contrasenia, usuario.contrasenia)) {
+                 req.session.usuario = usuario;
+                res.redirect('/');
+                if (req.body.rememberme) {
+                         res.cookie('usuariosId', usuarios.id, { maxAge: 1000 * 60 * 60 * 7 }) // usariosId como esta en el app.js
+                    }
                     
                 } else {
                     throw Error('Invalid credentials.')
