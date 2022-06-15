@@ -36,7 +36,8 @@ const controller = {
                 contrasenia: hashedPassword,
                 email: req.body.email,
                 documento: req.body.documento,
-                fecha_de_nacimiento: req.body.fecha_de_nacimiento
+                fecha_de_nacimiento: req.body.fecha_de_nacimiento,
+                perfil: req.body.perfil
             })
             .then(function () {
                 res.redirect('/');
@@ -45,25 +46,24 @@ const controller = {
                 res.send(error);
             })
     },
-    access: async function(req, res, next) {
-        db.Usuarios.findOne({where: {usuario: req.body.usuario}})
-        .then (function(usuario){
-            if (!usuario) throw Error('User not found.')
-             if (hasher.compareSync(req.body.contrasenia, usuario.contrasenia)) {
-                 req.session.usuario = usuario;
-                res.redirect('/');
-                if (req.body.rememberme) {
-                         res.cookie('usuarioId', db.Usuarios.id, { maxAge: 1000 * 60 * 60 * 7 }) // usariosId como esta en el app.js
+    access:  function(req, res, next) {
+        db.Usuarios.findOne({ where: { usuario: req.body.usuario }})
+            .then(function(usuario) {
+                if (!usuario) throw Error('User not found.')
+                if (hasher.compareSync(req.body.contrasenia, usuario.contrasenia)) {
+                    req.session.usuario = usuario;
+                    if (req.body.rememberme) {
+                        res.cookie('usuarioId', usuario.id, { maxAge: 1000 * 60 * 60 * 7 })
                     }
-                    
+                    res.redirect('/');
                 } else {
                     throw Error('Invalid credentials.')
                 }
             })
-            .catch(function (error) {
-                res.send(error);
+            .catch(function (err) {
+                next(err)
             })
-    }, 
+    },
     
     search: function (req, res) {
         db.zapas.findAll({
