@@ -53,7 +53,7 @@ const controller = {
                  req.session.usuario = usuario;
                 res.redirect('/');
                 if (req.body.rememberme) {
-                         res.cookie('usuariosId', usuarios.id, { maxAge: 1000 * 60 * 60 * 7 }) // usariosId como esta en el app.js
+                         res.cookie('usuarioId', db.Usuarios.id, { maxAge: 1000 * 60 * 60 * 7 }) // usariosId como esta en el app.js
                     }
                     
                 } else {
@@ -84,7 +84,7 @@ const controller = {
 
     logout: function (req, res, next) {
         req.session.usuario = null;
-        res.clearCookie('usuariosId');
+        res.clearCookie('usuarioId');
         res.redirect('/')
     }, 
 
