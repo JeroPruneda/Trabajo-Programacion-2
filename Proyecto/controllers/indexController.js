@@ -73,6 +73,7 @@ const controller = {
                     {modelo: {[op.like]: "%"+req.query.criteria+"%"}}
                 ]
             },
+            include: [{association: "duenio"}]
         })
         .then(function (productos) {
             res.render("index", {productos});

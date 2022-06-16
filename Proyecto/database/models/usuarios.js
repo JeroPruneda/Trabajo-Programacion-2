@@ -10,7 +10,8 @@ module.exports = function (sequelize, dataTypes) {
         documento: { type: dataTypes.STRING },
         fecha_de_nacimiento: { type: dataTypes.DATE},
         contrasenia: { type: dataTypes.STRING },
-        perfil: { type: dataTypes.STRING }
+        perfil: { type: dataTypes.STRING },
+        
         
         
     }
@@ -21,12 +22,11 @@ module.exports = function (sequelize, dataTypes) {
     
     const Usuario = sequelize.define('Usuarios', cols, configs);
    
-    /* Usuario.associate = function(models){
-        Usuario.hasMany(models.zapas, {
-          as:'productos',
-           foreignKey :'usuarioId'
-     });
-} */
-        
+   /*  Usuario.associate = function(models){
+        Usuario.hasMany(models.Productos, {
+          as:'objetos',
+          foreignKey :'usuarioId'
+     }); */
+/* } */
     return Usuario;
 }
