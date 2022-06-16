@@ -52,7 +52,7 @@ const controller = {
                 if (!usuario) throw Error('User not found.')
                 if (hasher.compareSync(req.body.contrasenia, usuario.contrasenia)) {
                     req.session.usuario = usuario;
-                    if (req.body.rememberme) {
+                    if (req.body.recordarme) {
                         res.cookie('usuarioId', usuario.id, { maxAge: 1000 * 60 * 60 * 7 })
                     }
                     res.redirect('/');

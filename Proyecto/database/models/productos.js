@@ -10,6 +10,7 @@ module.exports = function (sequelize, dataTypes) {
         fecha: { type: dataTypes.DATE },
         descripcion: { type: dataTypes.STRING },
         imagenes : {type: dataTypes.STRING },
+        usuarioId : {type: dataTypes.INTEGER}
        
     }
     const configs = {
