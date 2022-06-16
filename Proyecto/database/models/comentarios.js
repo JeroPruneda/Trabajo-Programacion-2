@@ -8,7 +8,9 @@ module.exports = function (sequelize, dataTypes) {
         content: { type: dataTypes.STRING },
         user_id : { type: dataTypes.STRING },
         fecha: { type: dataTypes.DATE },
-        descripcion: { type: dataTypes.STRING }
+        descripcion: { type: dataTypes.STRING },
+        usuarioId : {type: dataTypes.INTEGER},
+        productoId : {type: dataTypes.INTEGER}
     }
     const configs = {
         tableName: 'comentarios',
