@@ -42,10 +42,11 @@ const controller = {
                 res.send(error)
             });    */
     },
-    edit: function(req, res) {
+     edit: function(req, res) {
         res.render('profile-edit', { title: 'Edit'});
     }
-    }
+    
+}
 
 
 module.exports = controller;

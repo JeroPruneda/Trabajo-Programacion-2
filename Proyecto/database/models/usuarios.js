@@ -10,7 +10,8 @@ module.exports = function (sequelize, dataTypes) {
         documento: { type: dataTypes.STRING },
         fecha_de_nacimiento: { type: dataTypes.DATE},
         contrasenia: { type: dataTypes.STRING },
-        perfil: { type: dataTypes.STRING }
+        perfil: { type: dataTypes.STRING },
+        usuarioId: { type: dataTypes.INTEGER },
         
         
     }
