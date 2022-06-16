@@ -18,12 +18,12 @@ module.exports = function (sequelize, dataTypes) {
     }
     
     const Comentarios = sequelize.define('Comentario', cols, configs);
+  
     Comentarios.associate = function(models){
         Comentarios.belongsTo(models.zapas, {
            as:'zapas',
            foreignKey :'zapas_id'
       });
-        
 }
     return Comentarios;
     Comentarios.associate = function(models){
