@@ -11,7 +11,7 @@ module.exports = function (sequelize, dataTypes) {
         fecha_de_nacimiento: { type: dataTypes.DATE},
         contrasenia: { type: dataTypes.STRING },
         perfil: { type: dataTypes.STRING },
-        usuarioId: { type: dataTypes.INTEGER },
+        
         
         
     }
@@ -22,11 +22,11 @@ module.exports = function (sequelize, dataTypes) {
     
     const Usuario = sequelize.define('Usuarios', cols, configs);
    
-   /*  Usuario.associate = function(models){
-        Usuario.hasMany(models.Productos, {
+     Usuario.associate = function(models){
+        Usuario.hasMany(models.zapas, {
           as:'objetos',
           foreignKey :'usuarioId'
-     }); */
-/* } */
+     }); 
+ } 
     return Usuario;
 }

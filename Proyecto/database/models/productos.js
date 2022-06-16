@@ -25,10 +25,10 @@ module.exports = function (sequelize, dataTypes) {
             as:'duenio',
            foreignKey :'usuarioId'
        });
-       /*  Productos.hasMany(models.Comentarios), {
+         Productos.hasMany(models.Comentario), {
            as:'opinion',
            foreignKey :'comentarioId'
-        } */
+        } 
     } 
     return Productos;
     }
