@@ -11,8 +11,6 @@ module.exports = function (sequelize, dataTypes) {
         fecha_de_nacimiento: { type: dataTypes.DATE},
         contrasenia: { type: dataTypes.STRING },
         perfil: { type: dataTypes.STRING },
-
-        
         
     }
     const configs = {
