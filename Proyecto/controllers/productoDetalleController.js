@@ -21,12 +21,12 @@ detalle: function(req, res, ) {
        });
 },
   
-add: function(req, res) {
+ add: function(req, res) {
     if (!req.session.usuario) { 
         throw Error('Not authorized.')
     }
     res.render('products-add');
-},
+}, 
 show : function(req, res, next) {
       res.render('products-add');
 

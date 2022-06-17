@@ -5,7 +5,7 @@ const productos = db.zapas
 const controller = {
      myProfile: function(req, res) {
          res.render('profile', { usuario, productos });
-         db.Usuarios.findByPk(req.session.usuario.id, { include: [ { association: "objetos" } ] })
+         db.Usuarios.findByPk(req.session.usuario.id, { include: [ { association: "productos" } ] })
              .then(function (usuario) {
                 
                  res.render('profile', { usuario : usuario });
@@ -16,7 +16,7 @@ const controller = {
      },
     
     profile: function(req, res) {
-        db.Usuarios.findByPk(req.params.id)
+        db.Usuarios.findByPk(req.params.id )
             .then(function (usuario) {
                 res.render('profile', { usuario });
             })

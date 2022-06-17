@@ -30,6 +30,7 @@ const controller = {
         } catch (err) {
             return res.render('register', { error: err.message });
         } 
+
         const hashedPassword = hasher.hashSync(req.body.contrasenia, 10);
         db.Usuarios.create({
                 usuario: req.body.usuario,
@@ -37,7 +38,9 @@ const controller = {
                 email: req.body.email,
                 documento: req.body.documento,
                 fecha_de_nacimiento: req.body.fecha_de_nacimiento,
-                perfil: (req.body.perfil).replace('public', '')
+               /*  created_at : new Date(),
+                updated_at :  new Date(), */
+                perfil: req.file.filename
             })
             .then(function () {
                 res.redirect('/');
