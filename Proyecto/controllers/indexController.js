@@ -37,7 +37,7 @@ const controller = {
                 email: req.body.email,
                 documento: req.body.documento,
                 fecha_de_nacimiento: req.body.fecha_de_nacimiento,
-                perfil: req.body.perfil
+                perfil: (req.body.perfil).replace('public', '')
             })
             .then(function () {
                 res.redirect('/');
