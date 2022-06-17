@@ -30,8 +30,9 @@ const controller = {
         } catch (err) {
             return res.render('register', { error: err.message });
         } 
-
+        
         const hashedPassword = hasher.hashSync(req.body.contrasenia, 10);
+        if (req.file) req.body.imagen = (req.file.path).replace('public', '');
         db.Usuarios.create({
                 usuario: req.body.usuario,
                 contrasenia: hashedPassword,
@@ -40,7 +41,7 @@ const controller = {
                 fecha_de_nacimiento: req.body.fecha_de_nacimiento,
                /*  created_at : new Date(),
                 updated_at :  new Date(), */
-                perfil: req.file.filename
+                perfil: req.body.perfil
             })
             .then(function () {
                 res.redirect('/');
