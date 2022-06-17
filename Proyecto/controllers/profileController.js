@@ -42,10 +42,28 @@ const controller = {
                 res.send(error)
             });    */
     },
-     edit: function(req, res) {
+    edit:  function(req, res) {
         res.render('profile-edit', { title: 'Edit'});
+    },/* function(req, res) {
+         productos.findByPk(req.params.id)
+             .then(function (usuario) {
+                 res.render('profile-edit', { usuario });
+             })
+             .catch(function (error) {
+                 res.send(error);
+             })  */
+     
+     update: function(req, res) {
+        if (req.file) req.body.perfil = (req.file.path).replace('public', '');
+        db.Usuarios.update(req.body, { where: { id: req.params.id } })
+            .then(function(productos) {
+                res.redirect('/')
+            })
+            .catch(function(error) {
+                res.send(error);
+            })
     }
-    
+
 }
 
 
