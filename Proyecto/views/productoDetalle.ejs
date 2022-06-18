@@ -27,7 +27,13 @@
 										<%=productos.descripcion%>
 									</p>
 								 </div>
+
+								 <%if (locals.usuario && usuario.id == productos.usuarioId)%>
+									<form action = "/<%productos.id%>/borrar" method = "POST">
+										<button type="submit" class="btn btn-primary">Eliminar Producto</button>
+									</form> 	 %>
 							</article>
+									
 						</section>
 
 				</article>

@@ -6,7 +6,7 @@ const hasher = require("bcryptjs")
 const controller = {
     
     index: function(req, res) {
-        db.zapas.findAll()
+        db.zapas.findAll({include: [{association : "duenio"}]})
             .then(function (productos) {
                 res.render('index', { productos });
             })
