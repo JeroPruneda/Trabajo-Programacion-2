@@ -24,8 +24,8 @@
 							<article>
 								<div class="data">
 									<p class="user">
-										<%=productos.descripcion%>
-									</p>
+										<%=productos.descripcion%></p>
+										<p>FECHA DE CARGA DEL PRODUCTO:  <%= productos.fecha %> </p>
 								 </div>
 
 								 <%if (locals.usuario && usuario.id == productos.usuarioId)%>
