@@ -44,7 +44,8 @@ const controller = {
     },
     edit:  function(req, res) {
         res.render('profile-edit', { title: 'Edit'});
-    },/* function(req, res) {
+    },
+    /* function(req, res) {
          productos.findByPk(req.params.id)
              .then(function (usuario) {
                  res.render('profile-edit', { usuario });
