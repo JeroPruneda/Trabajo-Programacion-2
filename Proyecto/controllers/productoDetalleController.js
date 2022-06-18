@@ -80,5 +80,21 @@ guardar: function(req, res) {
                 res.send(error);
             })
     },
+    comment: function(req, res) {
+        if (!req.session.usuario) { 
+            throw Error('Not authorized.')
+        }
+        // Set user from session user
+        req.body.usuarioId = req.session.usuario.id;
+        // Set book from url params
+        req.body.productoId = req.params.id;
+        db.Comentario.create(req.body)
+            .then(function() {
+                res.redirect('/productoDetalle' + req.params.id)
+            })
+            .catch(function(error) {
+                res.send(error);
+            })
+    },
 }
 module.exports = controller;
