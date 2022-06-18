@@ -1,5 +1,8 @@
 var db = require("../database/models")
-
+var multer = require('multer');
+const upload = multer({
+    dest: '..public/images/upload'
+})
 
 const controller = {
   /*   index: function(req, res) {
@@ -21,12 +24,12 @@ detalle: function(req, res, ) {
        });
 },
   
-add: function(req, res) {
+ add: function(req, res) {
     if (!req.session.usuario) { 
         throw Error('Not authorized.')
     }
     res.render('products-add');
-},
+}, 
 show : function(req, res, next) {
       res.render('products-add');
 
@@ -39,7 +42,7 @@ guardar: function(req, res) {
      if (req.file) req.body.imagenes = (req.file.path).replace('public', '');
        db.zapas.create(req.body)
        .then(function () {
-           res.redirect('add')
+           res.redirect('/')
        })
        .catch(function (error) {
            res.send(error)
@@ -54,10 +57,23 @@ guardar: function(req, res) {
                 res.send(error);
             })
             },
+
         update: function(req, res) {
         if (req.file) req.body.imagenes = (req.file.path).replace('public', '');
         db.zapas.update(req.body, { where: { id: req.params.id } })
             .then(function(productos) {
+                res.redirect('/')
+            })
+            .catch(function(error) {
+                res.send(error);
+            })
+    },
+    borrar: function (req, res) {
+        if (!req.session.usuario) {
+            throw Error('Not authorized.')
+        }
+        db.zapas.destroy({ where: { id: req.params.id } })
+            .then(function() {
                 res.redirect('/')
             })
             .catch(function(error) {
