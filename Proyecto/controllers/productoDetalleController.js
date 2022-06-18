@@ -40,8 +40,8 @@ guardar: function(req, res) {
     }
      req.body.usuario = req.session.usuario
      if (req.file) req.body.imagenes = (req.file.path).replace('public', '');
-       db.zapas.create(req.body)
-       .then(function () {
+     db.zapas.create(req.body)
+       .then(function() {
            res.redirect('/')
        })
        .catch(function (error) {
@@ -62,6 +62,7 @@ guardar: function(req, res) {
         if (req.file) req.body.imagenes = (req.file.path).replace('public', '');
         db.zapas.update(req.body, { where: { id: req.params.id } })
             .then(function(productos) {
+                console.log(productos);
                 res.redirect('/')
             })
             .catch(function(error) {
@@ -72,7 +73,7 @@ guardar: function(req, res) {
         if (req.session.usuario != undefined) {
             throw Error('Not authorized.')
         }
-        db.zapas.destroy(
+        db.zapas.destroy(req.body,
             { where: 
                 {id: req.params.id }
             }

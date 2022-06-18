@@ -17,7 +17,7 @@
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src="<%= %>" alt="" class="product-detail-img">
 					<h1 class="product-detail-description">
-						<%=productos.marca%> <%=productos.modelo%>  </h1>
+						<%=productos.marca%> <%=productos.modelo%> </h1>
 						<img src="<%= productos.imagenes %> " alt="">
 						
 						<section class="comments">
@@ -29,9 +29,13 @@
 								 </div>
 
 								 <% if (locals.usuario && usuario.id == productos.usuarioId)%>
+								 <a href="/productoDetalle/<%=productos.id%>/edit" >
+									<i class="fas fa-cog"></i></a> 
 									<form action = "/borrar/<%=productos.id%>" method = "POST">
 									<button type="submit" class="btn btn-primary">Eliminar Producto</button>
 									</form> %>
+									
+									
 							</article>
 									
 						</section>
