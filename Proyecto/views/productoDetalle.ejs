@@ -28,10 +28,10 @@
 									</p>
 								 </div>
 
-								 <%if (locals.usuario && usuario.id == productos.usuarioId)%>
+								 <% if (locals.usuario && usuario.id == productos.usuarioId)%>
 									<form action = "/<%productos.id%>/borrar" method = "POST">
 										<button type="submit" class="btn btn-primary">Eliminar Producto</button>
-									</form> 	 %>
+									</form> %>
 							</article>
 									
 						</section>
@@ -40,22 +40,31 @@
 			
 				<div class="col-12 col-lg-4">
 					
-					<section class="comments">
-						<article>
-							<div class="data">
-								<p class="user">
-									COMENTARIOS SOBRE EL PRODUCTO: 
-								</p>
-							 </div>
-						</article>
-					</section>
-				 
+		<section class="comments">
+			<article>
+				<div class="data">
+					<p class="user">
+						COMENTARIOS SOBRE EL PRODUCTO: 
+					</p>
 				</div>
-				<form class="form" action="" method="post">
-					<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-					<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-				</form>
-			</div>
+			</article>
+		</section>
+				</div>
+				<% if(locals.usuario && usuario.id == productos.usuarioId) %> 
+					<form class="form" action="" method="post">
+						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+					</form>
+				</div>
+
+			<% if (locals.usuario && usuario.id == productos.usuarioId) { %>
+				<form action="/products/<%= productos.id %>/delete" method="POST">
+					<input class="btn btn-danger" type="submit" value="Borrar">
+					</form>
+					<form action="/products/<%= productos.id %>/edit" method="GET">
+					  <input class="btn btn-danger" type="submit" value="Edit">
+					</form>
+				  <% } %>
 		</div>
 	</div>
 	<%-include("./partials/footer.ejs")%>

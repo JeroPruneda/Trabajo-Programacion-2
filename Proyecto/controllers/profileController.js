@@ -54,7 +54,7 @@ const controller = {
                  res.send(error);
              })  */
      
-     update: function(req, res) {
+    update: function(req, res) {
         if (req.file) req.body.perfil = (req.file.path).replace('public', '');
         db.Usuarios.update(req.body, { where: { id: req.params.id } })
             .then(function(productos) {
