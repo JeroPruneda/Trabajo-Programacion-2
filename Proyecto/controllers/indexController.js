@@ -55,9 +55,10 @@ const controller = {
             .then(function(usuario) {
                 if (!usuario) throw Error('User not found.')
                 if (hasher.compareSync(req.body.contrasenia, usuario.contrasenia)) {
-                    req.session.usuario = usuario;
+                    req.session.usuario = usuario;// si el usuario esta bien guardame el usario en la session // con esta request todas las sesiones van a saber que es del mismo usuario
+                    //el servidor puede recordar el usuario 
                     if (req.body.recordarme) {
-                        res.cookie('usuarioId', usuario.id, { maxAge: 1000 * 60 * 60 * 7 })
+                        res.cookie('usuarioId', usuario.id, { maxAge: 1000 * 60 * 60 * 7 }) //guardamos solo el id porque podriamos exponer datos sensibles del usuario
                     }
                     res.redirect('/');
                 } else {
