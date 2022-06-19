@@ -39,8 +39,8 @@ const controller = {
                 email: req.body.email,
                 documento: req.body.documento,
                 fecha_de_nacimiento: req.body.fecha_de_nacimiento,
-                created_at : new Date(),
-                updated_at :  new Date(),  
+                // created_at : new Date(),
+                // updated_at :  new Date(),  
                 perfil: req.body.perfil
             })
             .then(function () {

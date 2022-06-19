@@ -4,7 +4,7 @@ var controller = require('../controllers/profileController')
 
 var multer = require('multer');
 const upload = multer({
-    dest: '..public/images/upload'
+    dest: 'public/images/upload'
 })
 
 // router.get('/me', controller.profile);
@@ -21,7 +21,7 @@ router.post('/:id/edit', upload.single('perfil'), controller.update);
 
 
 
- router.get('/:id', controller.profile);
+router.get('/:id', controller.profile);
 
 
 
