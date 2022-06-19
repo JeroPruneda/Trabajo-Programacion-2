@@ -34,7 +34,7 @@ app.use(session({
 //pasarle algo al cliente e identificarlo
 
 
-// Session middleware
+// Session middleware //setea res.locals.usuario lo que hay en la sesion del usuario // nos permite hacer lo del header
 app.use(function(req, res, next) {
   res.locals.usuario = req.session.usuario; //podemos llamarlo desde cualquier vista, le pasa a todas las vistas una variable
   next();

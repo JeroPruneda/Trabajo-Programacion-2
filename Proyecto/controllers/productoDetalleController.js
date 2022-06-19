@@ -15,7 +15,7 @@ const controller = {
             });  
     }, */
 detalle: function(req, res, ) {
-       db.zapas.findByPk(req.params.id)
+       db.zapas.findByPk(req.params.id, {include: [{association : "duenio"}]})
        .then(function (productos) {
            res.render('productoDetalle', { productos });
        })

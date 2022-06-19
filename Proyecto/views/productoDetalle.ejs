@@ -28,7 +28,7 @@
 										<p>FECHA DE CARGA DEL PRODUCTO:  <%= productos.fecha %> </p>
 								 </div>
 
-								 <% if (locals.usuario && usuario.id == productos.usuarioId)%>
+								 <% if (locals.usuario && productos.duenio?.id == productos.usuarioId)%>
 								 <a href="/productoDetalle/<%=productos.id%>/edit" >
 									<i class="fas fa-cog"></i></a> 
 									<form action = "/borrar/<%=productos.id%>" method = "POST">
