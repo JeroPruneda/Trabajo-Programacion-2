@@ -36,7 +36,6 @@
 									</form> %>
 									
 							</article>
-									
 						</section>
 
 				</article>
@@ -61,10 +60,10 @@
 				</div>
 
 			<% if (locals.usuario && usuario.id == productos.usuarioId) { %>
-				<form action="/products/<%= productos.id %>/delete" method="POST">
+				<form action="/productoDetalle/<%= productos.id %>/delete" method="POST">
 					<input class="btn btn-danger" type="submit" value="Borrar">
 					</form>
-					<form action="/products/<%= productos.id %>/edit" method="GET">
+					<form action="/productoDetalle/<%= productos.id %>/edit" method="GET">
 					  <input class="btn btn-danger" type="submit" value="Edit">
 					</form>
 				  <% } %>
