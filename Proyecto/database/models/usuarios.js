@@ -12,15 +12,15 @@ module.exports = function (sequelize, dataTypes) {
         contrasenia: { type: dataTypes.STRING },
         perfil: { type: dataTypes.STRING },
     
-        /* created_at : {
-            type: dataTypes.DATE,
-            allowNull:true,
-        },
-        updated_at: {
-            type: dataTypes.DATE,
-            allowNull: true,
-        }
-         */
+        // /* created_at : {
+        //     type: dataTypes.DATE,
+        //     allowNull:true,
+        // },
+        // updated_at: {
+        //     type: dataTypes.DATE,
+        //     allowNull: true,
+        // }
+        //  */
         
     }
     const configs = {

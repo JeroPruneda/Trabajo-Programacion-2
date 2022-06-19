@@ -31,7 +31,7 @@
 								 <% if (locals.usuario && productos.duenio?.id == productos.usuarioId)%>
 								 <a href="/productoDetalle/<%=productos.id%>/edit" >
 									<i class="fas fa-cog"></i></a> 
-									<form action = "/borrar/<%=productos.id%>" method = "POST">
+									<form action = "/productoDetalle/<%=productos.id%>/borrar"method = "POST">
 									<button type="submit" class="btn btn-primary">Eliminar Producto</button>
 									</form> %>
 									
@@ -62,7 +62,7 @@
 				</div>
 
 			<% if (locals.usuario && usuario.id == productos.usuarioId) { %>
-				<form action="/products/<%= productos.id %>/delete" method="POST">
+				<form action="/<%= productos.id %>/borrar" method="POST">
 					<input class="btn btn-danger" type="submit" value="Borrar">
 					</form>
 					<form action="/products/<%= productos.id %>/edit" method="GET">

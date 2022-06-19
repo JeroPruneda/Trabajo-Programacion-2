@@ -35,18 +35,19 @@ show : function(req, res, next) {
 
        },
 guardar: function(req, res) {
-     if (!req.session.usuario) { //Si ponemos esto, no nos anda el agrega, porque toma este error, ya que no nos funciona las cookies entonces lo toma como si NO estuviera logueado entonces no te deja subirlo
+     if (!req.session.usuario) { 
        return res.render('products-add', { error: 'Not authorized.' });
     }
      req.body.usuario = req.session.usuario
      if (req.file) req.body.imagenes = (req.file.path).replace('public', '');
-     db.zapas.create(req.body)
-       .then(function() {
-           res.redirect('/')
-       })
-       .catch(function (error) {
-           res.send(error)
-       });
+     db.zapas.create(req.body, { where: { id: req.params.id } })
+         .then(function(productos) {
+             console.log(productos);
+             res.redirect('/')
+         })
+         .catch(function(error) {
+             res.send(error);
+         })
        },
        edit: function(req, res) {
         db.zapas.findByPk(req.params.id)
