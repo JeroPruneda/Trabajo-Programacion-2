@@ -36,7 +36,6 @@
 									</form> %>
 									
 							</article>
-									
 						</section>
 
 				</article>
@@ -64,7 +63,7 @@
 				<form action="/<%= productos.id %>/borrar" method="POST">
 					<input class="btn btn-danger" type="submit" value="Borrar">
 					</form>
-					<form action="/products/<%= productos.id %>/edit" method="GET">
+					<form action="/productoDetalle/<%= productos.id %>/edit" method="GET">
 					  <input class="btn btn-danger" type="submit" value="Edit">
 					</form>
 				  <% } %>
