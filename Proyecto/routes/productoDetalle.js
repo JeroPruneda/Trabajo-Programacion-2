@@ -13,7 +13,7 @@ router.post('/add', upload.single('imagenes'), controller.guardar);
 
 router.get('/:id', controller.detalle);
 router.post(':id/borrar', controller.borrar);
-router.post('/comment/:id', controller.comment);
+router.post('/productoDetalle/:id', controller.comment);
 
 router.get('/:id/edit', controller.edit);
 router.post('/:id/edit', upload.single('imagenes'), controller.update);

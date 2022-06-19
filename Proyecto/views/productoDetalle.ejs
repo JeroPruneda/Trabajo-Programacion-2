@@ -50,11 +50,23 @@
 					</p>
 				</div>
 			</article>
+			<% for (let i=0; i < comentarios.comentario.length; i++) { %>
+				<div class="card mb-2">
+				  <div class="card-body">
+					<a href="/users/<%= comentarios.comentario[i].usuario.id%>">
+					  <h4>
+						<%= comentarios.comentario[i].usuario.usuario %>
+					  </h4>
+					</a>
+					<%= comentarios.comentario[i].content %>
+				  </div>
+				</div>
+				<% } %>
 		</section>
 				</div>
 				<% if(locals.usuario && usuario.id == productos.usuarioId) %> 
-					<form class="form" action="" method="post">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+					<form class="form" action="/productoDetalle/<%= producto.id %>" method="post">
+						<input class="form-input" type="text" value="" name="content" id="content" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
 				</div>
