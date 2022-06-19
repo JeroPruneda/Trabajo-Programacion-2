@@ -50,7 +50,7 @@ const controller = {
                 res.send(error);
             })
     },
-    access:  function(req, res, next) {
+    access:  async function (req, res, next) {
         db.Usuarios.findOne({ where: { usuario: req.body.usuario }})
             .then(function(usuario) {
                 if (!usuario) throw Error('User not found.')
