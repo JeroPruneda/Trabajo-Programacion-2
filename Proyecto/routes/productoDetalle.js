@@ -12,7 +12,7 @@ router.get('/add', controller.add);
 router.post('/add', upload.single('imagenes'), controller.guardar);
 
 router.get('/:id', controller.detalle);
-router.post('/borrar/:id', controller.borrar);
+router.post(':id/borrar', controller.borrar);
 router.post('/comment/:id', controller.comment);
 
 router.get('/:id/edit', controller.edit);
