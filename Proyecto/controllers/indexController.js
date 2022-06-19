@@ -32,15 +32,15 @@ const controller = {
         } 
         
         const hashedPassword = hasher.hashSync(req.body.contrasenia, 10);
-        if (req.file) req.body.imagen = (req.file.path).replace('public', '');
+        if (req.file) req.body.perfil = (req.file.path).replace('public', '');
         db.Usuarios.create({
                 usuario: req.body.usuario,
                 contrasenia: hashedPassword,
                 email: req.body.email,
                 documento: req.body.documento,
                 fecha_de_nacimiento: req.body.fecha_de_nacimiento,
-               /*  created_at : new Date(),
-                updated_at :  new Date(), */
+                created_at : new Date(),
+                updated_at :  new Date(),  
                 perfil: req.body.perfil
             })
             .then(function () {
