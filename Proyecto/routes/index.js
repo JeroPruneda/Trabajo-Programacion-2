@@ -12,7 +12,7 @@ router.post('/login', controller.access);
 
 router.get('/register', controller.register);
 /* router.post('/register', controller.register2); */
-router.post('/register', upload.single('perfil'), controller.register);
+router.post('/register', upload.single('perfil'), controller.register2);
 
 router.get('/logout', controller.logout);
 

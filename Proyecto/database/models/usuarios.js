@@ -11,18 +11,6 @@ module.exports = function (sequelize, dataTypes) {
         fecha_de_nacimiento: { type: dataTypes.DATE},
         contrasenia: { type: dataTypes.STRING },
         perfil: { type: dataTypes.STRING },
-<<<<<<< HEAD
-    
-        // /* created_at : {
-        //     type: dataTypes.DATE,
-        //     allowNull:true,
-        // },
-        // updated_at: {
-        //     type: dataTypes.DATE,
-        //     allowNull: true,
-        // }
-        //  */
-=======
         created_at : {
             type: dataTypes.DATE,
             allowNull:true,
@@ -32,7 +20,6 @@ module.exports = function (sequelize, dataTypes) {
             allowNull: true,
         } 
          
->>>>>>> 4e47d1f0e66043f520c070db987510952d56839f
         
     }
     const configs = {
