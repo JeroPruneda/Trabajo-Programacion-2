@@ -7,17 +7,16 @@ const upload = multer({
 })
 
 const controller = {
-    //  myProfile: function(req, res) {
-    //     //  res.render('profile', { usuario, productos });
-    //      db.Usuarios.findByPk(req.session.usuario.id, { include: [ { association: "objetos" } ] })
-    //          .then(function (usuario) {
-                
-    //              res.render('profile', { usuario : usuario });
-    //          })
-    //          .catch(function (error) {
-    //              res.send(error)
-    //          }); 
-    //  },
+     noMyperfil: function(req, res) {
+        //  res.render('profile', { usuario, productos });
+         db.Usuarios.findByPk(req.session.usuario.id, { include: [ { association: "objetos" } ] })
+             .then(function (usuario) {    
+                 res.render('perfilDeotro', { usuario : usuario });
+             })
+             .catch(function (error) {
+                 res.send(error)
+             }); 
+     },
     
     profile: function(req, res) {
         db.Usuarios.findByPk(req.params.id, {include: [{association : "objetos"}]})

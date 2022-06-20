@@ -75,16 +75,16 @@ guardar: function(req, res) {
             })
     },
     borrar: function (req, res) {
-        if (req.session.usuario != undefined) {
-            throw Error('Not authorized.')
-        }
-        db.zapas.destroy(req.body,
+        // if (req.session.usuario != undefined) {
+        //     throw Error('Not authorized.')
+        // }
+        db.zapas.destroy(
             { where: 
                 {id: req.params.id }
             }
             )
             .then(function() {
-                res.redirect('index')
+                res.redirect('/')
             })
             .catch(function(error) {
                 res.send(error);
