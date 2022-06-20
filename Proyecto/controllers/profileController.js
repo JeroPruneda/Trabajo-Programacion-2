@@ -20,7 +20,7 @@ const controller = {
       },
     
     profile: function(req, res) {
-        db.Usuarios.findByPk(req.params.id, { include: [ { association: "objetos" } ] } )
+        db.Usuarios.findByPk(req.params.id, {include: [{association : "objetos"}]})
             .then(function (usuario) {
                 res.render('profile', { usuario });
             })
