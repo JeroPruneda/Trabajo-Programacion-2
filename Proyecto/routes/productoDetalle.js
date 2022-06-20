@@ -12,8 +12,8 @@ router.get('/add', controller.add);
 router.post('/add', upload.single('imagenes'), controller.guardar);
 
 router.get('/:id', controller.detalle);
-router.post(':id/borrar', controller.borrar);
-router.post('/productoDetalle/:id', controller.comment);
+router.post('/:id/borrar', controller.borrar);
+router.post('/:id', controller.comment);
 
 router.get('/:id/edit', controller.edit);
 router.post('/:id/edit', upload.single('imagenes'), controller.update);

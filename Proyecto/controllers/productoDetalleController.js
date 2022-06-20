@@ -80,7 +80,7 @@ guardar: function(req, res) {
             })
     },
     borrar: function (req, res) {
-        if (req.session.usuario != undefined) {
+        if (req.session.usuario == undefined) {
            throw Error('Not authorized.')
         }
         db.zapas.destroy(
