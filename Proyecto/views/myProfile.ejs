@@ -10,18 +10,18 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			  <div class="img-container offset-3 col-2">
-				<img src="<%= usuario.perfil %>"  alt="foto de perfil"  class="foto-perfil">
+				<img src="<%= me.perfil %>"  alt="foto de perfil"  class="foto-perfil">
 			</div>  
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"> <%= usuario.usuario %> 
-						<a href="/profile/<%= usuario.id %> /edit" >
+					<h1 class="main-title"> <%= me.usuario %> 
+						<a href="/profile/<%= me.id %> /edit" >
 							<i class="fas fa-cog"></i>
 						</a>
 					</h1>
 					
 				</div>
-				<h3> <%= usuario.email %></h3>
+				<h3> <%= me.email %></h3>
 				<div>
 					<ul class="">
 						<li>8 productos </li>

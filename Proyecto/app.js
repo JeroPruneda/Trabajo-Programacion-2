@@ -64,7 +64,7 @@ app.use("/profile", profileRouter);
 //   next(createError(404));
 // }); 
 app.use(function(req, res, next) {
-  res.locals.usuario = req.session.usuario;
+  res.locals.me = req.session.usuario;
   next();
 })
 // error handler

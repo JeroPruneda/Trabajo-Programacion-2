@@ -14,6 +14,7 @@ const upload = multer({
 
 
  //COMENTE ESTE PORQUE ESTAMOS TIENEN 2 PROFILE
+ router.get('/me', controller.myProfile);
 router.get('/:id/edit', controller.edit);
 router.post('/:id/edit', upload.single('perfil'), controller.update);
 /* router.post('/me/edit', controller.edit); */
