@@ -39,8 +39,13 @@ guardar: function(req, res) {
        return res.render('products-add', { error: 'Not authorized.' });
     }
      req.body.usuario = req.session.usuario
-     if (req.file) req.body.imagenes = (req.file.path).replace('public', '');
-     db.zapas.create(req.body)
+     db.zapas.create({
+        marca: req.body.marca,
+        modelo : req.body.modelo,
+        imagenes : req.body.imagenes = (req.file.path).replace('public', ''),
+        descripcion : req.body.descripcion,
+        usuarioId : req.body.usuario.id
+        })//aca le puse para ver si me lo creaba pero no
        .then(function() {
            res.redirect('/')
        })
@@ -70,16 +75,16 @@ guardar: function(req, res) {
             })
     },
     borrar: function (req, res) {
-        if (req.session.usuario != undefined) {
-            throw Error('Not authorized.')
-        }
-        db.zapas.destroy(req.body,
+        // if (req.session.usuario != undefined) {
+        //     throw Error('Not authorized.')
+        // }
+        db.zapas.destroy(
             { where: 
                 {id: req.params.id }
             }
             )
             .then(function() {
-                res.redirect('index')
+                res.redirect('/')
             })
             .catch(function(error) {
                 res.send(error);

@@ -24,21 +24,23 @@
 							<article>
 								<div class="data">
 									<p class="user">
-										<%=productos.usuarioId%> <%=productos.duenio.id%></p>
-										<p>DUEÑO:  <%= productos.duenio.usuario %> </p>
-										<p>FECHA DE CARGA DEL PRODUCTO:  <%= productos.fecha  %> </p>
+										<%=productos.descripcion%></p>
+										<p>DUEÑO:  <%= productos.duenio?.usuario %> </p>
+										<p>FECHA DE CARGA DEL PRODUCTO:  <%= productos.fecha  %>  </p>
+										<% if (locals.usuario && usuario.id == productos.usuarioId){ %>
+											
+											<a href="/productoDetalle/<%=productos.id%>/edit" >EDITAR PRODUCTO<i class="fas fa-cog"></i></a> 
+											<br></br>
+											<form action = "/productoDetalle/<%=productos.id%>/borrar"method = "POST">
+											<button type="submit" class="btn btn-primary">Eliminar Producto </button>
+											</form> 
+											   %>
+											   <% } else { %>
+												   <p></p>
+											   <% } %>
 								 </div>
 
-								 <% if (locals.usuario && productos.duenio.id  == productos.usuarioId){ %>
-								 <a href="/productoDetalle/<%=productos.id%>/edit" >
-									<i class="fas fa-cog"></i></a> 
-									<form action = "/productoDetalle/<%=productos.id%>/borrar"method = "POST">
-									<button type="submit" class="btn btn-primary">Eliminar Producto </button>
-									</form> 
-									%>
-									<% } else { %>
-										<p></p>
-									<% } %>
+								
 							</article>
 						</section>
 

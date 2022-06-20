@@ -23,14 +23,14 @@
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
 						<a href="/productoDetalle/<%= productos[i].id%>" >
-							<figure class="product-box_image">
-								<img src="<%= productos[i].imagenes%>" alt="zapatillas">
+							<figure class="product-box_image"  >
+								<img src="<%= productos[i].imagenes%>"  alt="zapatillas">
 							</figure>
 							<article class="product-box_data">
 								<h2><%= productos[i].marca %> <%= productos[i].modelo %> </h2>
 								<p><%= productos[i].descripcion %> </p>
 								<p><%= productos[i].fecha %> </p>
-								<a href="/profile/"productos[i].duenio?.id> <%= productos[i].duenio?.usuario %></a>
+								<a href="/profile/<%=productos[i].duenio?.id%>"> <%= productos[i].duenio?.usuario %></a>
 								 <!-- <p> </p> tiene que aparecer el nombre del usuario que la subio  y un hypervinculo que nos lleve a su perfil-->
 								 <!-- //este hypervinculo esta mal -->
 							</article>

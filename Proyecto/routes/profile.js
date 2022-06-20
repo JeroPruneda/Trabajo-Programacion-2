@@ -13,16 +13,13 @@ const upload = multer({
 /* router.get('/register', controller.register); */ 
 
 
-// router.get('/me', controller.myProfile); //COMENTE ESTE PORQUE ESTAMOS TIENEN 2 PROFILE
+ //COMENTE ESTE PORQUE ESTAMOS TIENEN 2 PROFILE
 router.get('/:id/edit', controller.edit);
 router.post('/:id/edit', upload.single('perfil'), controller.update);
 /* router.post('/me/edit', controller.edit); */
 //router.post('/me/edit', upload.single('perfil'), controller.update);
-
-
-
 router.get('/:id', controller.profile);
-
+router.get('/perfilDeotro/:id', controller.noMyperfil);
 
 
 module.exports = router;
