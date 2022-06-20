@@ -39,8 +39,8 @@ const controller = {
                 email: req.body.email,
                 documento: req.body.documento,
                 fecha_de_nacimiento: req.body.fecha_de_nacimiento,
-                // created_at : new Date(),
-                // updated_at :  new Date(),  
+                created_at : new Date(),
+                updated_at :  new Date(),  
                 perfil: req.body.perfil
             })
             .then(function () {
@@ -75,7 +75,8 @@ const controller = {
             where: {
                 [op.or]: [
                     {marca: {[op.like]: "%"+req.query.criteria+"%"}},
-                    {modelo: {[op.like]: "%"+req.query.criteria+"%"}}
+                    {modelo: {[op.like]: "%"+req.query.criteria+"%"}},
+                    {descripcion: {[op.like]: "%"+req.query.criteria+"%"}},
                 ]
             },
             include: [{association: "duenio"}]

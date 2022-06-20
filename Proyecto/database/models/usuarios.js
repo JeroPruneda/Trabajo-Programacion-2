@@ -11,14 +11,14 @@ module.exports = function (sequelize, dataTypes) {
         fecha_de_nacimiento: { type: dataTypes.DATE},
         contrasenia: { type: dataTypes.STRING },
         perfil: { type: dataTypes.STRING },
-       /*  created_at : {
+       created_at : {
             type: dataTypes.DATE,
             allowNull:true,
         },
         updated_at: {
             type: dataTypes.DATE,
             allowNull: true,
-        } */ 
+        } 
          
         
     }
