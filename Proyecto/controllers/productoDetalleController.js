@@ -40,7 +40,7 @@ guardar: function(req, res) {
     }
      req.body.usuario = req.session.usuario
      if (req.file) req.body.imagenes = (req.file.path).replace('public', '');
-     db.zapas.create(req.body)
+     db.zapas.create(req.body, usuarioId = req.body.usuario.id)//aca le puse para ver si me lo creaba pero no
        .then(function() {
            res.redirect('/')
        })
