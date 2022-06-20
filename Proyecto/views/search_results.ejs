@@ -1,7 +1,10 @@
 <%- include('./partials/headerLogueado.ejs') %>
-<% if () %> 
+
+<% if (productos.length==0){%>
+  <h2 class="products-title"> No se han encontrado resultados para tu búsqueda</h2>
 <h1><%= zapas.marca %></h1>
 <h1><%= zapas.modelo %></h1>
+
 <ul>
   <li><b>descripción:</b> <%= zapas.descripcion %></li>
   <li><b>modelo:</b>$ <%= zapas.modelo  %></li>

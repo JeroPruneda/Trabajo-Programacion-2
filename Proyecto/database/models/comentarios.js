@@ -24,7 +24,12 @@ module.exports = function (sequelize, dataTypes) {
            as:'zapas',
            foreignKey :'productoId'
       });
-      
+    Comentarios.associate = function (models) {
+        Comentarios.belongsTo(models.usuarios, {
+            as:"duenio",
+            foreignKey:"usuarioId"
+        })
+    }
 }
  return Comentarios;
 }
