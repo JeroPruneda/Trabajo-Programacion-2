@@ -15,7 +15,12 @@ const controller = {
             });  
     }, */
 detalle: function(req, res, ) {
-       db.zapas.findByPk(req.params.id, {include: [{association : "duenio"}]})
+       db.zapas.findByPk(
+        req.params.id, 
+        {include: [
+        {association : "duenio"},
+        ]}
+        )
        .then(function (productos) {
            res.render('productoDetalle', { productos });
        })
@@ -24,7 +29,7 @@ detalle: function(req, res, ) {
        });
 },
   
- add: function(req, res) {
+add: function(req, res) {
     if (!req.session.usuario) { 
         throw Error('Not authorized.')
     }
@@ -75,9 +80,9 @@ guardar: function(req, res) {
             })
     },
     borrar: function (req, res) {
-        // if (req.session.usuario != undefined) {
-        //     throw Error('Not authorized.')
-        // }
+        if (req.session.usuario != undefined) {
+           throw Error('Not authorized.')
+        }
         db.zapas.destroy(
             { where: 
                 {id: req.params.id }
@@ -100,7 +105,7 @@ guardar: function(req, res) {
         req.body.productoId = req.params.id;
         db.Comentario.create(req.body)
             .then(function() {
-                res.redirect('/productoDetalle' + req.params.id)
+                res.redirect('/productoDetalle/' + req.params.id)
             })
             .catch(function(error) {
                 res.send(error);
