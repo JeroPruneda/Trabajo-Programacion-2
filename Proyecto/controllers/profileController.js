@@ -10,8 +10,8 @@ const controller = {
      myProfile: function(req, res) {
         //  res.render('profile', { usuario, productos });
          db.Usuarios.findByPk(req.session.usuario.id, { include: [ { association: "objetos" } ] })
-             .then(function (miperfil) {    
-                 res.render('myProfile', { miperfil });
+             .then(function (me) {    
+                 res.render('myProfile', { me });
              })
              .catch(function (error) {
                  res.send(error)

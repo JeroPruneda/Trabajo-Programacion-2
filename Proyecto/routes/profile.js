@@ -7,10 +7,10 @@ const upload = multer({
     dest: 'public/images/upload'
 })
 
-// router.get('/me', controller.profile);
+router.get('/me', controller.miPerfil);
 
 
-/* router.get('/register', controller.register); */ 
+/*  router.get('/register', controller.register);  */
 
 
  //COMENTE ESTE PORQUE ESTAMOS TIENEN 2 PROFILE
