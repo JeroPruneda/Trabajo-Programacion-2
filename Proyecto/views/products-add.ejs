@@ -17,23 +17,27 @@
 		
 	</div>
 	<form method="post" enctype="multipart/form-data" >
-		<label class="form-label">Marca</label>
-		<input type="text" class="form-control" name="marca" id="marca" />
+		<div class="mb-3">					
+			<label class="form-label">Marca</label>
+			<input type="text" class="form-control" name="marca" id="marca" />
+		  </div>
+		  <div class="mb-3">
+			<label class="form-label">Modelo</label>
+			<input type="text" class="form-control" name="modelo" id="modelo" />	
+		  </div>
+		  <div class="mb-3">
+			<label class="form-label">Descripcion</label>
+			<input type="text" class="form-control" name="descripcion" id="descripcion" />
+		  </div>
+		  <div class="mb-3">
+			<label for="perfil" class="form-label">Imagen</label>
+			<input type="file" class="form-control" name="imagenes" id="imagenes">
+		  </div>
+		
 	  
-		<label>Modelo</label>
-		<input type="text" class="form-control" name="modelo" id="modelo" />
+		
 	  
-		<label>Descripcion</label>
-		<input type="text" class="form-control" name="descripcion" id="descripcion" />
-	  
-		<!-- <label>Fecha de Carga</label>
-		<input type="date" class="form-control" name="fecha" id="fecha" /> --> 
-
-		<label>Imagen</label>
-		<input type="file" name="imagenes" id="imagenes"  for ="imagenes"/>
-
-		<!-- <label>Cover</label>
-		<input type="file" class="form-control" name="cover" id="cover" /> -->
+		
 	  
 		<button type="submit" class="btn btn-primary">Submit</button>
 	  </form>
