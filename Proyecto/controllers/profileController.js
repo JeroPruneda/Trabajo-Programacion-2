@@ -3,20 +3,20 @@ const usuario = db.Usuarios
 const productos = db.zapas
 var multer = require('multer');
 const upload = multer({
-    dest: '..public/images/upload'
+    dest: 'public/images/upload'
 })
 
 const controller = {
-     noMyperfil: function(req, res) {
-        //  res.render('profile', { usuario, productos });
-         db.Usuarios.findByPk(req.session.usuario.id, { include: [ { association: "objetos" } ] })
-             .then(function (usuario) {    
-                 res.render('perfilDeotro', { usuario : usuario });
-             })
-             .catch(function (error) {
-                 res.send(error)
-             }); 
-     },
+    //  miPerfil: function(req, res) {
+    //     //  res.render('profile', { usuario, productos });
+    //      db.Usuarios.findByPk(req.params.id, { include: [ { association: "objetos" } ] })
+    //          .then(function (usuario) {    
+    //              res.render('miPerfil', { usuario : usuario });
+    //          })
+    //          .catch(function (error) {
+    //              res.send(error)
+    //          }); 
+    //  },
     
     profile: function(req, res) {
         db.Usuarios.findByPk(req.params.id, {include: [{association : "objetos"}]})

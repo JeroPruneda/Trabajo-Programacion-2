@@ -19,7 +19,8 @@ router.post('/:id/edit', upload.single('perfil'), controller.update);
 /* router.post('/me/edit', controller.edit); */
 //router.post('/me/edit', upload.single('perfil'), controller.update);
 router.get('/:id', controller.profile);
-router.get('/perfilDeotro/:id', controller.noMyperfil);
+// router.get('/perfiles/:id', controller.perfiles);
+
 
 
 module.exports = router;
