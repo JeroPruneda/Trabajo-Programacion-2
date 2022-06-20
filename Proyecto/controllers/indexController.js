@@ -75,7 +75,8 @@ const controller = {
             where: {
                 [op.or]: [
                     {marca: {[op.like]: "%"+req.query.criteria+"%"}},
-                    {modelo: {[op.like]: "%"+req.query.criteria+"%"}}
+                    {modelo: {[op.like]: "%"+req.query.criteria+"%"}},
+                    {descripcion: {[op.like]: "%"+req.query.criteria+"%"}},
                 ]
             },
             include: [{association: "duenio"}]
