@@ -52,28 +52,21 @@
 			<article>
 				<div class="data">
 					<p class="user">
-						COMENTARIOS SOBRE EL PRODUCTO: 
+						COMENTARIOS: 
 					</p>
-					
-			
-  				
-					<!-- aca iria un for con los comentarios -->
-					
+					<% for( let i = 0; i < productos.opinion.length; i++) { %>
+						<div class="card mb-2">
+							<div class="card-body">
+								<img src="<%= productos.opinion[i].usuarios.perfil%> " alt="" class="foto-comentario">
+								<b><a href="/profile/<%= productos.opinion[i].usuarios.id %>"><%= productos.opinion[i].usuarios.usuario%></a></b>
+								<%= productos.opinion[i].comentario %>
+								<br></br>
+							</div>
+						</div>
+					<%}%>
 				</div>
 			</article>
-			
 		</section>
-				</div>
-				<% for( let i = 0; i < comentario.opinion.length; i++) { %>
-					<div class="card mb-2">
-						<div class="card-body">
-							<img src="<%= comentario.opinion[i]%> " alt="" class="foto-comentario">
-							<b><a href="/profile/:id/<%= comentario.opinion[i] %>"><%= comentario.opinion[i]%></a></b>
-							<%= comentario.opinion[i] %>
-							<br></br>
-						</div>
-					</div>
-					<%}%>
 				<% if(locals.usuario && productos.duenio?.id == productos.usuarioId) {%> 
 					<form class="form" action="/productoDetalle/<%= productos.id %>" method="post">
 						<input class="form-input" type="text" value="" name="comentario" id="comentario" placeholder="Agregar comentario">
