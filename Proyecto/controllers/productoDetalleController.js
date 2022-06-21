@@ -5,33 +5,17 @@ const upload = multer({
 })
 
 const controller = {
-    index: function(req, res) {
-        db.zapas.findAll(
-            {
-                include: {
-                    all: true,
-                    nested: false
-                }, //con esto le digo que me traiga todas las relaciones 
-                order: [
-                    ['id', 'DESC']
-                ],
-            }
-        )
+  /*   index: function(req, res) {
+        db.zapas.findAll()
             .then(function (productos) {
                 res.render('index', { productos });
             })
             .catch(function (error) {
                 res.send(error)
             });  
-    },
+    }, */
 detalle: function(req, res, ) {
-       db.zapas.findByPk(req.params.id, {include: [{association : "duenio"}, {association : "opinion"} ]})
-        /* include: {
-            all: true,
-            nested: true
-        },
-        order: [['comentario', 'id', 'DESC']], */
-
+       db.zapas.findByPk(req.params.id, {include: [{association : "duenio"},  ]})
        .then(function (productos) {
            res.render('productoDetalle', { productos });
        })
@@ -119,7 +103,7 @@ guardar: function(req, res) {
         }
         db.Comentario.create(comment)
             .then(function() {
-                res.redirect('/productoDetalle/' + req.params.id)
+                res.redirect('/productoDetalle/id/' + req.params.id)
             })
             .catch(function(error) {
                 res.send(error);
