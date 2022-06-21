@@ -21,11 +21,11 @@ module.exports = function (sequelize, dataTypes) {
     const Productos = sequelize.define('zapas', cols, configs);
     
     Productos.associate = function(models){
-         Productos.belongsTo(models.Usuarios, {
+        Productos.belongsTo(models.Usuarios, {
             as:'duenio',
            foreignKey :'usuarioId'
-       });
-         Productos.hasMany(models.Comentario, {
+        });     
+        Productos.hasMany(models.Comentario, {
            as:'opinion',
            foreignKey :'comentarioId'
         })

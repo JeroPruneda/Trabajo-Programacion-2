@@ -22,9 +22,9 @@ module.exports = function (sequelize, dataTypes) {
         Comentarios.belongsTo(models.zapas, {
            as:'zapas',
            foreignKey :'productoId'
-      });
+    });
     Comentarios.associate = function (models) {
-        Comentarios.belongsTo(models.usuarios, {
+        Comentarios.belongsTo(models.Usuario, {
             as:"duenio",
             foreignKey:"usuarioId"
         })
