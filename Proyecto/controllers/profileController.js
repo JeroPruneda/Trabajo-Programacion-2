@@ -1,6 +1,7 @@
 var db = require("../database/models");
 const usuario = db.Usuarios
 const productos = db.zapas
+const hasher = require("bcryptjs")
 var multer = require('multer');
 const upload = multer({
     dest: 'public/images/upload'
@@ -79,6 +80,7 @@ const controller = {
                },
    
            update: function(req, res) {
+            if (req.body.contrasenia) usuario.contrasenia = hasher.hashSync(req.body.contrasenia, 10);
            if (req.file) req.body.perfil = (req.file.path).replace('public', '');
            db.Usuarios.update(req.body, { where: { id: req.params.id } })
                .then(function(usuarios) {
