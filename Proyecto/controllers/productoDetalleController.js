@@ -5,15 +5,25 @@ const upload = multer({
 })
 
 const controller = {
-  /*   index: function(req, res) {
-        db.zapas.findAll()
+    index: function(req, res) {
+        db.zapas.findAll(
+            {
+                include: {
+                    all: true,
+                    nested: false
+                }, //con esto le digo que me traiga todas las relaciones 
+                order: [
+                    ['id', 'DESC']
+                ],
+            }
+        )
             .then(function (productos) {
                 res.render('index', { productos });
             })
             .catch(function (error) {
                 res.send(error)
             });  
-    }, */
+    },
 detalle: function(req, res, ) {
        db.zapas.findByPk(req.params.id, {include: [{association : "duenio"}, {association : "opinion"}  ]})
        .then(function (productos) {
