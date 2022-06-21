@@ -80,7 +80,7 @@ const controller = {
                },
    
            update: function(req, res) {
-            if (req.body.contrasenia) usuario.contrasenia = hasher.hashSync(req.body.contrasenia, 10);
+        req.body.contrasenia  = hasher.hashSync(req.body.contrasenia, 10);
            if (req.file) req.body.perfil = (req.file.path).replace('public', '');
            db.Usuarios.update(req.body, { where: { id: req.params.id } })
                .then(function(usuarios) {

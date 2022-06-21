@@ -33,8 +33,11 @@ module.exports = function (sequelize, dataTypes) {
         Usuario.hasMany(models.zapas, {
           as:'objetos',
           foreignKey :'usuarioId'
-        }
-    );
+     }); 
+    /*  Usuario.hasMany(models.Comentario, {
+        as:'opinion',
+        foreignKey :'usuarioId'
+     })  */
  } 
     return Usuario;
 }
