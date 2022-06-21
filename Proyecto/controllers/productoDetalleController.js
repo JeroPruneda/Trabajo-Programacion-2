@@ -15,18 +15,13 @@ const controller = {
             });  
     }, */
 detalle: function(req, res, ) {
-       db.zapas.findByPk(
-        req.params.id, 
-        {include: [
-        {association : "duenio"},
-        ]}
-        )//{association : "opinion"} le quiero pasar esta asociacion tambien pero me tira error
+       db.zapas.findByPk(req.params.id, {include: [{association : "duenio"}, {association : "opinion"} ]})
        .then(function (productos) {
            res.render('productoDetalle', { productos });
        })
        .catch(function (error) {
            res.send(error)
-       });
+       })
 },
   
 add: function(req, res) {
@@ -101,13 +96,14 @@ guardar: function(req, res) {
             console.log(req.session)
             throw Error('Not authorized.')
         }
-        // Set user from session user
-        req.body.usuarioId = req.session.usuario.id;
-        // Set book from url params
-        req.body.productoId = req.params.id;
-        db.Comentario.create(req.body)
+        let comment = {
+            comentario: req.body.comentario,
+            usuarioId: req.body.usuarioId,
+            productoId: req.body.productoId,
+        }
+        db.Comentario.create(comment)
             .then(function() {
-                res.redirect('/productoDetalle/' + req.params.id)
+                res.redirect('/productoDetalle/id/' + req.params.id)
             })
             .catch(function(error) {
                 res.send(error);

@@ -29,7 +29,8 @@ const controller = {
             if (!req.body.email) { throw Error('Not email provided.') }
             if (req.body.contrasenia.length < 4) { throw Error('Password too short.') }
             const usuarios = await db.Usuarios.findOne({ where: { email: req.body.email } })  
-             if (usuarios) { throw Error('Email already in use.') }    
+             if (usuarios) { throw Error('Email already in use.') }  
+            
         } catch (err) {
             return res.render('register', { error: err.message });
         } 
