@@ -7,7 +7,7 @@ const upload = multer({
     dest: 'public/images/upload'
 })
 
-
+/* router.get('/me', controller.miPerfil); */
 
 
 /*  router.get('/register', controller.register);  */

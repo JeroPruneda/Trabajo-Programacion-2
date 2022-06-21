@@ -70,6 +70,7 @@ guardar: function(req, res) {
 
         update: function(req, res) {
         if (req.file) req.body.imagenes = (req.file.path).replace('public', '');
+        
         db.zapas.update(req.body, { where: { id: req.params.id } })
             .then(function(productos) {
                 console.log(productos);
@@ -97,6 +98,7 @@ guardar: function(req, res) {
     },
     comment: function(req, res) {
         if (!req.session.usuario) { 
+            console.log(req.session)
             throw Error('Not authorized.')
         }
         // Set user from session user
