@@ -18,9 +18,9 @@ detalle: function(req, res, ) {
        db.zapas.findByPk(
         req.params.id, 
         {include: [
-        {association : "opinion"},
+        {association : "duenio"},
         ]}
-        )
+        )//{association : "opinion"} le quiero pasar esta asociacion tambien pero me tira error
        .then(function (productos) {
            res.render('productoDetalle', { productos });
        })

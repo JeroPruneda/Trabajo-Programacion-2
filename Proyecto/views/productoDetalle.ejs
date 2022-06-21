@@ -25,7 +25,7 @@
 								<div class="data">
 									<p class="user">
 										<%=productos.descripcion%></p>
-										<p>DUEÑO: <a href="/profile/"><%= productos.duenio?.usuario %> </a>  </p>
+										<p>DUEÑO:  <%= productos.duenio?.usuario %> </p>
 										<p>FECHA DE CARGA DEL PRODUCTO:  <%= productos.fecha  %>  </p>
 										<% if (locals.usuario && usuario.id == productos.usuarioId){ %>
 											
@@ -56,10 +56,7 @@
 					</p>
 					
 			
-	 		 		<div class="card-body">
-						<p><%= productos.opinion.comentario %></p>
-	  				</div>
-				
+  				
 					<!-- aca iria un for con los comentarios -->
 					
 				</div>
