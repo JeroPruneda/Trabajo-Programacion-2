@@ -61,9 +61,9 @@
             
          <% if (locals.usuario) { %> <!--si existe locals.usuario mostrame este header -->
             <ul class="right-navbar">
-                <!-- <li class="nav-item">
-                  <a class="fas fa-user"> Hola </a>
-                </li> -->
+                <li class="nav-item">
+                    <a class="fas fa-user"> Hola <%= usuario.usuario %></a>
+                  </li>
                 <li class="nav-item">
                     <a class="fas fa-user" href="/profile/me"> Mi perfil</a>
                 </li>
