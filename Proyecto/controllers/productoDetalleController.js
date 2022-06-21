@@ -20,7 +20,7 @@ detalle: function(req, res, ) {
         {include: [
         {association : "duenio"},
         ]}
-        )
+        )//{association : "opinion"} le quiero pasar esta asociacion tambien pero me tira error
        .then(function (productos) {
            res.render('productoDetalle', { productos });
        })
