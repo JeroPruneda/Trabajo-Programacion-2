@@ -18,7 +18,7 @@ detalle: function(req, res, ) {
        db.zapas.findByPk(
         req.params.id, 
         {include: [
-        {association : "duenio"},
+        {association : "opinion"},
         ]}
         )
        .then(function (productos) {
