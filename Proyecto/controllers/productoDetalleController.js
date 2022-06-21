@@ -105,9 +105,15 @@ guardar: function(req, res) {
         req.body.usuarioId = req.session.usuario.id;
         // Set book from url params
         req.body.productoId = req.params.id;
-        db.Comentario.create(req.body)
+
+        db.Comentario.create({
+            comentario: req.body.comentario,
+            usuarioId: req.body.usuarioId,
+            productoId: req.body.productoId,
+        })
+        
             .then(function() {
-                res.redirect('/productoDetalle/' + req.params.id)
+                res.redirect('/productoDetalle/id/' + req.params.id)
             })
             .catch(function(error) {
                 res.send(error);
