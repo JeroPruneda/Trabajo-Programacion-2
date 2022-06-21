@@ -5,10 +5,7 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        content: { type: dataTypes.STRING },
-        user_id : { type: dataTypes.STRING },
-        fecha: { type: dataTypes.DATE },
-        descripcion: { type: dataTypes.STRING },
+        comentario: { type: dataTypes.STRING },
         usuarioId : {type: dataTypes.INTEGER},
         productoId : {type: dataTypes.INTEGER}
     }
