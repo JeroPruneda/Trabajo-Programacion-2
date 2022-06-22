@@ -101,13 +101,17 @@ guardar: function(req, res) {
         }
         req.body.usuarioId = req.session.usuario.id;
         req.body.productoId = req.params.id;
-       
+        req.body.nombre = req.session.usuario.usuario;
+        req.body.foto = req.session.usuario.perfil;
         db.Comentario.create({
             comentario : req.body.comentario,
             usuarioId : req.body.usuarioId,
             productoId : req.body.productoId,
             createdAt : new Date(),
-            updatedAt : new Date() 
+            updatedAt : new Date(),
+            nombre : req.body.nombre,
+            
+        })
             .then(function () {
                 res.redirect("/productoDetalle/" + req.params.id)
             })
@@ -115,7 +119,7 @@ guardar: function(req, res) {
                 res.send(error);
             })
     
-        }
+        
     
         
             /* .then(function() {

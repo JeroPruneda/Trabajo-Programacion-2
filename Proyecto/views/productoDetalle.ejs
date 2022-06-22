@@ -57,8 +57,7 @@
 					<% for( let i = 0; i < productos.opinion.length; i++) { %>
 						<div class="card mb-2">
 							<div class="card-body">
-								<img src="../public/images/uploads/<%=productos.opinion[i].user?.perfil%>" alt="foto" class="foto-comentario">
-								<b><a href="/profile/<%=productos.user?.id%>"><%= productos.user?.usuario  %></a></b>
+								<b><a href="/profile/<%=productos.user?.id%>"><%= productos.opinion[i].nombre  %></a></b>
 								<p><%= productos.opinion[i].comentario %> </p>
 								<br></br>
 							</div>
