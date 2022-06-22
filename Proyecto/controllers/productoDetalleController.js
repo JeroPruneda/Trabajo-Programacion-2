@@ -16,9 +16,10 @@ const controller = {
     }, */
 detalle: function(req, res, ) {
        db.zapas.findByPk(req.params.id, 
-        {include: [{all  : true, nested :false},
+        {include: [{all  : true, nested :false}],
+        order: [['id', 'ASC']]
          
-     ]})
+     })
        .then(function (productos) {
            // res.send(productos)
            res.render('productoDetalle', { productos});
