@@ -25,7 +25,7 @@
 								<div class="data">
 									<p class="user">
 										<%=productos.descripcion%></p>
-										<p>DUEÑO:  <%= productos.duenio?.usuario %> </p>
+										<p>DUEÑO:  <%= productos.user?.usuario %> </p>
 										<p>FECHA DE CARGA DEL PRODUCTO:  <%= productos.fecha  %>  </p>
 										<% if (locals.usuario && usuario.id == productos.usuarioId){ %>
 											
@@ -57,8 +57,8 @@
 					<% for( let i = 0; i < productos.opinion.length; i++) { %>
 						<div class="card mb-2">
 							<div class="card-body">
-								<img src="../public/images/uploads/<%=productos.opinion[i].perfil%>" alt="foto" class="foto-comentario">
-								<b><a href="/profile/<%=productos.opinion[i].duenio?.id%>"><%= productos.opinion[i].usuario %></a></b>
+								<img src="../public/images/uploads/<%=productos.opinion[i].user?.perfil%>" alt="foto" class="foto-comentario">
+								<b><a href="/profile/<%=productos.user?.id%>"><%= productos.user?.usuario  %></a></b>
 								<p><%= productos.opinion[i].comentario %> </p>
 								<br></br>
 							</div>
@@ -67,7 +67,7 @@
 				</div>
 			</article>
 		</section>
-				<% if(locals.usuario && productos.duenio?.id == productos.usuarioId) {%> 
+				<% if(locals.usuario && productos.user?.id == productos.usuarioId) {%> 
 					<form class="form" action="/productoDetalle/<%= productos.id %>/comment" method="post">
 						<input class="form-input" type="text" value="" name="comentario" id="comentario" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>

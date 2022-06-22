@@ -25,7 +25,10 @@ const controller = {
             });  
     },
 detalle: function(req, res, ) {
-       db.zapas.findByPk(req.params.id, {include: [{association : "duenio"}, {association : "opinion"}  ]})
+       db.zapas.findByPk(req.params.id, 
+        {include: [{all  : true, nested :false},
+         
+     ]})
        .then(function (productos) {
            res.render('productoDetalle', { productos});
        })
@@ -108,6 +111,7 @@ guardar: function(req, res) {
         }
         req.body.usuarioId = req.session.usuario.id;
         req.body.productoId = req.params.id;
+       
         db.Comentario.create({
             comentario : req.body.comentario,
             usuarioId : req.body.usuarioId,

@@ -7,7 +7,7 @@ const controller = {
     
     index: function(req, res) {
         db.zapas.findAll({
-            include: [{association : "duenio"}],
+            include: [{all  : true, nested :false}],
             order: [['id', 'DESC']]  })
           
             .then(function (productos) {
@@ -83,7 +83,7 @@ const controller = {
                     {descripcion: {[op.like]: "%"+req.query.criteria+"%"}},
                 ]
             },
-            include: [{association: "duenio"}]
+            include: [{association: "user"}]
         })
         .then(function (productos) {
             res.render("index", {productos});

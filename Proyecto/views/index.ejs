@@ -30,7 +30,7 @@
 								<h2><%= productos[i].marca %> <%= productos[i].modelo %> </h2>
 								<p><%= productos[i].descripcion %> </p>
 								<p><%= productos[i].fecha %> </p>
-								<a href="/profile/<%=productos[i].duenio?.id%>"> <%= productos[i].duenio?.usuario %></a>
+								<a href="/profile/<%=productos[i].user?.id%>"> <%= productos[i].user?.usuario %></a>
 								 <!-- <p> </p> tiene que aparecer el nombre del usuario que la subio  y un hypervinculo que nos lleve a su perfil-->
 								 <!-- //este hypervinculo esta mal -->
 							</article>
