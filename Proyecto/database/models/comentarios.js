@@ -24,10 +24,10 @@ module.exports = function (sequelize, dataTypes) {
             as: 'me',
             foreignKey: 'usuarioId'
         });
-        Comentarios.belongsTo(models.zapas, {
+        /* Comentarios.belongsTo(models.zapas, {
             as: 'zapas',
             foreignKey: 'productoId'
-        })
+        }) */
     }
 
 

@@ -4,11 +4,7 @@ var controller = require('../controllers/profileController')
 var multer = require('multer');
 const upload = multer({ dest: 'public/images/upload' });
 /* router.get('/me', controller.miPerfil); */
-
-
-/*  router.get('/register', controller.register);  */
-
-
+/* router.get('/me', controller.miPerfil); */
  //COMENTE ESTE PORQUE ESTAMOS TIENEN 2 PROFILE
 router.get('/me', controller.myProfile);
 router.get('/:id/edit', controller.edit);
