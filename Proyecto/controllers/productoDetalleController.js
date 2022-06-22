@@ -99,16 +99,18 @@ guardar: function(req, res) {
 
         /* req.body.usuarioId = req.session.usuario.id;
         req.body.productoId = req.params.id;  */
-        if(req.session.usuario){
+        if(req.session.usuario){ 
             req.body.usuarioId = req.session.usuario.id;
             req.body.productoId = req.params.id;
             req.body.createdAt = new Date();
             req.body.updatedAt = new Date();
+           // req.body.usuarioNombre = req.session.usuario.usuario intente de cuando me cree el comentario me mande el nombre de las session del usuario
             /* comentario : req.body.comentario,
             usuarioId : req.body.usuarioId,
             productoId : req.body.productoId,
             createdAt : new Date(),
-            updatedAt : new Date() */
+            updatedAt : new Date() 
+            usuarioNombre : req.body.usuarioNombre*/
             db.Comentario.create(req.body)
             .then(function () {
                 res.redirect("/productoDetalle/" + req.params.id)
