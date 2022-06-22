@@ -47,12 +47,13 @@ app.use(function(req, res, next) {
     db.Usuarios.findByPk(req.cookies.usuarioId) //si no esta loeguado fijate si esta la cookie y si esta, ponela a en la session
     .then(function(usuario) {
       // Act as login
-      req.session.usuario = usuario; 
+      req.session.usuario = usuario;
       next();
     })
-  } else {
-    next();
+    }else{
+      next();
   }
+  
 })
 
 app.use('/', indexRouter);

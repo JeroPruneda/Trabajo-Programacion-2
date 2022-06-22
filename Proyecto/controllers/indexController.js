@@ -67,6 +67,8 @@ const controller = {
                     }
                     res.redirect('/');
                 } else {
+
+                    
                     throw Error('Invalid credentials.')
                 }
             })
