@@ -17,6 +17,7 @@ const controller = {
 detalle: function(req, res, ) {
        db.zapas.findByPk(req.params.id, {include: [{association : "duenio"}, {association : "opinion"}  ]})
        .then(function (productos) {
+           // res.send(productos)
            res.render('productoDetalle', { productos});
        })
        .catch(function (error) {
@@ -102,10 +103,10 @@ guardar: function(req, res) {
             comentario : req.body.comentario,
             usuarioId : req.body.usuarioId,
             productoId : req.body.productoId,
-            
+        
         })
             .then(function() {
-                res.redirect('/productoDetalle/id/' + req.params.id)
+                res.redirect('/productoDetalle/' + req.params.id)
             })
             .catch(function(error) {
                 res.send(error);
