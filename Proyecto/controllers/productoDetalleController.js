@@ -5,31 +5,22 @@ const upload = multer({
 })
 
 const controller = {
-    index: function(req, res) {
-        db.zapas.findAll(
-            {
-                include: {
-                    all: true,
-                    nested: false
-                }, //con esto le digo que me traiga todas las relaciones 
-                order: [
-                    ['id', 'DESC']
-                ],
-            }
-        )
+  /*   index: function(req, res) {
+        db.zapas.findAll()
             .then(function (productos) {
                 res.render('index', { productos });
             })
             .catch(function (error) {
                 res.send(error)
             });  
-    },
+    }, */
 detalle: function(req, res, ) {
        db.zapas.findByPk(req.params.id, 
         {include: [{all  : true, nested :false},
          
      ]})
        .then(function (productos) {
+           // res.send(productos)
            res.render('productoDetalle', { productos});
        })
        .catch(function (error) {
@@ -105,9 +96,8 @@ guardar: function(req, res) {
             })
     },
     comment: function(req, res) {
-        if (!req.session.usuario) { 
-            console.log(req.session)
-            throw Error('Not authorized.')
+        if(!req.session.usuario){ 
+            return res.render('login', {error:'Iniciá sesión o registrate para comentar'})
         }
         req.body.usuarioId = req.session.usuario.id;
         req.body.productoId = req.params.id;
@@ -116,14 +106,24 @@ guardar: function(req, res) {
             comentario : req.body.comentario,
             usuarioId : req.body.usuarioId,
             productoId : req.body.productoId,
-            
-        })
-            .then(function() {
+            createdAt : new Date(),
+            updatedAt : new Date() 
+            .then(function () {
+                res.redirect("/productoDetalle/" + req.params.id)
+            })
+            .catch(function (error) {
+                res.send(error);
+            })
+    
+        }
+    
+        
+            /* .then(function() {
                 res.redirect('/productoDetalle/' + req.params.id)
             })
             .catch(function(error) {
                 res.send(error);
-            })
+            }) */
     },
 }
 module.exports = controller;

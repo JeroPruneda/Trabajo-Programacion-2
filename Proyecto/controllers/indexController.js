@@ -36,6 +36,7 @@ const controller = {
         } 
         
         const hashedPassword = hasher.hashSync(req.body.contrasenia, 10);
+        
         if (req.file) req.body.perfil = (req.file.path).replace('public', '');
         db.Usuarios.create({
                 usuario: req.body.usuario,
