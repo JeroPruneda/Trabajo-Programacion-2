@@ -11,6 +11,10 @@ module.exports = function (sequelize, dataTypes) {
         productoId : {type: dataTypes.INTEGER},
         createdAt : {type: dataTypes.DATE},
         updatedAt : {type: dataTypes.DATE},
+        nombre: { type: dataTypes.STRING},
+        perfilc: { type: dataTypes.STRING },
+
+       
        
     }
     const configs = {
