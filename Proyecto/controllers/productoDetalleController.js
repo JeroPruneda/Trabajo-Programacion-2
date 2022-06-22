@@ -93,24 +93,39 @@ guardar: function(req, res) {
             })
     },
     comment: function(req, res) {
-        if (!req.session.usuario) { 
-            console.log(req.session)
-            throw Error('Not authorized.')
+        if(!req.session.usuario){ 
+            return res.render('login', {error:'Iniciá sesión o registrate para comentar'})
         }
-        req.body.usuarioId = req.session.usuario.id;
-        req.body.productoId = req.params.id;
-        db.Comentario.create({
-            comentario : req.body.comentario,
+
+        /* req.body.usuarioId = req.session.usuario.id;
+        req.body.productoId = req.params.id;  */
+        if(req.session.usuario){
+            req.body.usuarioId = req.session.usuario.id;
+            req.body.productoId = req.params.id;
+            req.body.createdAt = new Date();
+            req.body.updatedAt = new Date();
+            /* comentario : req.body.comentario,
             usuarioId : req.body.usuarioId,
             productoId : req.body.productoId,
+            createdAt : new Date(),
+            updatedAt : new Date() */
+            db.Comentario.create(req.body)
+            .then(function () {
+                res.redirect("/productoDetalle/" + req.params.id)
+            })
+            .catch(function (error) {
+                res.send(error);
+            })
+    
+        }
+    
         
-        })
-            .then(function() {
+            /* .then(function() {
                 res.redirect('/productoDetalle/' + req.params.id)
             })
             .catch(function(error) {
                 res.send(error);
-            })
+            }) */
     },
 }
 module.exports = controller;
