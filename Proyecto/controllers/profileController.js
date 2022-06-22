@@ -8,7 +8,8 @@ const upload = multer({
 const controller = {
      myProfile: function(req, res) {
         //  res.render('profile', { usuario, productos });
-         db.Usuarios.findByPk(req.session.usuario.id, { include: [ { association: "objetos" } ] })
+         db.Usuarios.findByPk(req.session.usuario.id, 
+            { include: [{all  : true, nested :false}]})
              .then(function (me) {    
                  res.render('myProfile', { me });
              })
@@ -18,7 +19,8 @@ const controller = {
      },
     
     profile: function(req, res) {
-        db.Usuarios.findByPk(req.params.id, {include: [{association : "objetos"}]})
+        db.Usuarios.findByPk(req.params.id, 
+            {include: [{all  : true, nested :false}]})
             .then(function (usuario) {
                 res.render('profile', { usuario});
             })
