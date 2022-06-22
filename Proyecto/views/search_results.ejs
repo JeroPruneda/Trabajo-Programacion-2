@@ -1,5 +1,8 @@
 <%- include('./partials/header.ejs') %>
-<% if () %> 
+<% if (productos.length==0){%>
+  <h2> No se han encontrado resultados para tu búsqueda</h2>
+  <% }else { %>
+
 <h1><%= zapas.marca %></h1>
 <h1><%= zapas.modelo %></h1>
 

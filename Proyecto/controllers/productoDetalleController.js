@@ -1,4 +1,8 @@
 var db = require("../database/models")
+var multer = require('multer');
+const upload = multer({
+    dest: '..public/images/upload'
+})
 
 const controller = {
   /*   index: function(req, res) {
