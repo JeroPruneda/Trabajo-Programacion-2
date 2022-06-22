@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var controller = require('../controllers/profileController')
-var multer = require('multer');
-const upload = multer({ dest: 'public/images/uploads' });
+
+
+var multer= require('multer');
+const upload = multer({dest: 'public/images/upload'});
+
 /* router.get('/me', controller.miPerfil); */
-
-
-/*  router.get('/register', controller.register);  */
 
 
  //COMENTE ESTE PORQUE ESTAMOS TIENEN 2 PROFILE
