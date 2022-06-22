@@ -1,10 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var controller = require("../controllers/productoDetalleController");
-var multer= require('multer');
-const upload = multer({dest: 'public/images/uploads'});
 
-
+var multer = require('multer');
+const upload = multer({ dest: 'public/images/uploads' });
 /* 
 router.get('/', controller.index); */
 
