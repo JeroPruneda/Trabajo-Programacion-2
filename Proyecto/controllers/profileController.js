@@ -1,11 +1,6 @@
 var db = require("../database/models");
-const usuario = db.Usuarios
-const productos = db.zapas
 const hasher = require("bcryptjs")
-var multer = require('multer');
-const upload = multer({
-    dest: 'public/images/upload'
-})
+
 
 const controller = {
      myProfile: function(req, res) {
