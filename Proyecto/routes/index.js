@@ -5,7 +5,7 @@ var multer = require('multer');
 const upload = multer({ dest: 'public/images/upload' });
 
 router.get('/', controller.index);
-router.get("/search-results", controller.search);
+
 
 router.get('/login', controller.login);
 router.post('/login', controller.access);
