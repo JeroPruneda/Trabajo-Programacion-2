@@ -77,7 +77,7 @@ const controller = {
             })
     },
     search: function (req, res) {
-            db.zapas.findAll({
+        db.zapas.findAll({
                 where: {
                     [op.or]: [
                         {marca: {[op.like]: "%"+req.query.criteria+"%"}},
@@ -85,10 +85,10 @@ const controller = {
                         {descripcion: {[op.like]: "%"+req.query.criteria+"%"}}
                     ]
                 },
-                include: [ { association: 'user' } ] 
+                include: [{all  : true, nested :false}] ,
             })
             .then(function (productos) {
-                res.render("index", {productos});
+                res.render("search-results", {productos});
             })
             .catch (function (error) {
                 res.send(error)

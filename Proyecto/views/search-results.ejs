@@ -6,16 +6,27 @@
 
 <body>
   <%- include('./partials/header.ejs') %>
-  <% if (productos.length==0){%>
-    <h2 class="products-title"> No se han encontrado resultados para tu búsqueda</h2>
-    <% }else %>
-    <h1><%= productos.marca %></h1>
-    <ul>
-  <li><b>descripción:</b> <%= productos.descripcion %></li>
-  <li><b>modelo:</b> <%= productos.modelo  %></li>
-</ul>
-<img src="<%= productos.imagenes %>" style="max-width: 200px;">
-
+  <% if (productos.length != 0) { %>
+    <h2 class="products-title"> Busqueda: </h2>
+    <% for (let i = 0; i < productos.length; i++) { %>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <section class="product-box">
+          <a href="/productoDetalle/<%= productos[i].id %>">
+            <figure class="product-box_image">
+              <img src="<%= productos[i].imagenes %>"  alt="shoes">
+            </figure>
+            <article class="product-box_data">
+              <h2> <%= productos[i].modelo  %>  </h2>
+              <p> <%= productos[i].descripcion  %> </p>
+              <p>Creador: <a href="/profile/<%=productos[i].user?.id%>"> <%= productos[i].user?.usuario %></a>
+            </article>
+          </a>
+        </section>
+      </div>
+      <% } %>
+      <% }  else {  %>
+        <h2 class="products-title">No se encontraron resultados para tu busqueda</h2>
+       <% } %> 
 
 <%- include('./partials/footer.ejs') %> 
   
