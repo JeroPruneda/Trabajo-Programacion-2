@@ -5,15 +5,7 @@ const upload = multer({
 })
 
 const controller = {
-  /*   index: function(req, res) {
-        db.zapas.findAll()
-            .then(function (productos) {
-                res.render('index', { productos });
-            })
-            .catch(function (error) {
-                res.send(error)
-            });  
-    }, */
+ 
 detalle: function(req, res, ) {
        db.zapas.findByPk(req.params.id, 
         {include: [{all  : true, nested :false}],
@@ -58,17 +50,17 @@ guardar: function(req, res) {
            res.send(error)
        });
        },
-       edit: function(req, res) {
+edit: function(req, res) {
         db.zapas.findByPk(req.params.id)
-            .then(function (productos) {
+        .then(function (productos) {
                 res.render('products-edit', { productos });
-            })
-            .catch(function (error) {
+        })
+        .catch(function (error) {
                 res.send(error);
-            })
-            },
+        })
+        },
 
-        update: function(req, res) {
+update: function(req, res) {
         if (req.file) req.body.imagenes = (req.file.path).replace('public', '');
         
         db.zapas.update(req.body, { where: { id: req.params.id } })
@@ -80,7 +72,7 @@ guardar: function(req, res) {
                 res.send(error);
             })
     },
-    borrar: function (req, res) {
+borrar: function (req, res) {
         if (req.session.usuario == undefined) {
            throw Error('Not authorized.')
         }
@@ -96,7 +88,7 @@ guardar: function(req, res) {
                 res.send(error);
             })
     },
-    comment: function(req, res) {
+comment: function(req, res) {
         if(!req.session.usuario){ 
             return res.render('login', {error:'Iniciá sesión o registrate para comentar'})
         }
@@ -124,12 +116,7 @@ guardar: function(req, res) {
         
     
         
-            /* .then(function() {
-                res.redirect('/productoDetalle/' + req.params.id)
-            })
-            .catch(function(error) {
-                res.send(error);
-            }) */
+            
     },
 }
 module.exports = controller;

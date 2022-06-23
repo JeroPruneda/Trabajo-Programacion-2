@@ -4,8 +4,6 @@ var controller = require("../controllers/productoDetalleController");
 
 var multer = require('multer');
 const upload = multer({ dest: 'public/images/upload' });
-/* 
-router.get('/', controller.index); */
 
 router.get('/add', controller.add);
 router.post('/add', upload.single('imagenes'), controller.guardar);
@@ -22,7 +20,7 @@ router.get('/show', controller.show);
 
 
 
-/* router.post('/:id/edit', upload.single('cover'), controller.update); */
+
 
 
 
